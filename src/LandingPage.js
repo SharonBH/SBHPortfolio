@@ -1,9 +1,10 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-filename-extension */
-import React from "react";
+import React, { useState } from "react";
 
-import { useLanguage } from 'json/LanguageContext';
+import { getData } from "json/landingPageData";
 import Header from "parts/Header";
 import Hero from "parts/Hero";
 import Service from "parts/Service";
@@ -14,18 +15,19 @@ import Discuss from "parts/Discuss";
 import Footer from "parts/Footer";
 
 function LandingPage() {
-  const { data } = useLanguage();
-
+  const [language] = useState("default");
+  const data = getData(language);
+  console.log(data);
   return (
     <>
-      <Header data={data.Header} />
-      <Hero data={data.Hero} />
-      <Service data={data.Services} />
-      <Portfolio data={data.Portfolios} />
-      <Advantage data={data.Advantages} />
-      <Testimonial data={data.Testimonials} />
-      <Discuss data={data.Discuss} />
-      <Footer data={data.Footer} />
+      <Header />
+      <Hero />
+      <Service data={data.services} />
+      <Portfolio data={data.portfolio} />
+      <Advantage data={data.advantages} />
+      <Testimonial data={data.testimonials} />
+      <Discuss />
+      <Footer />
     </>
   );
 }

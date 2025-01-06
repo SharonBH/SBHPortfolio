@@ -19,7 +19,7 @@ import { Form } from 'elements/Form';
 import Button from 'elements/Button';
 
 export const DiscussForm = (actions) => {
-  const { data, resetForm } = actions;
+  const { data, resetForm, text } = actions;
   const submitEmail = () => {
     const {
       name, company, email, phone, projectIdea,
@@ -27,7 +27,7 @@ export const DiscussForm = (actions) => {
 
     const templateParams = {
       from_name: `${name} - ${company} ( ${phone} - ${email} )`,
-      to_name: 'Racxstudio',
+      to_name: 'SBH',
       message: projectIdea,
     };
 
@@ -45,13 +45,13 @@ export const DiscussForm = (actions) => {
         'user_csqIxzN5mKsl1yw4ffJzV',
       )
         .then(() => {
-          toast.success('Success! we\'\ll get back to you soon. Thank you!');
+          toast.success(text.successMessage);
           resetForm();
         }, (error) => {
           toast.error(error);
         });
     } else {
-      toast.error('Please fill out the blank form.');
+      toast.error(text.errorMessage);
     }
   };
 
@@ -59,14 +59,13 @@ export const DiscussForm = (actions) => {
     <section className="flex flex-col container mx-auto mt-10 justify-center">
 
       <Fade direction="down" triggerOnce>
-        <h1 className="text-5xl text-theme-blue text-center font-bold">Lets Discuss</h1>
+        <h1 className="text-5xl text-theme-blue text-center font-bold">{ text.title }</h1>
       </Fade>
 
       <Fade direction="up" triggerOnce>
         <p className="font-light text-lg text-gray-400 text-center mb-12">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
-          Please fill out the form below to discuss your project and we'll get back to you in less than 24 hours.
-        </p>
+{ text.description }        </p>
       </Fade>
 
       <Fade direction="up" triggerOnce>
@@ -77,7 +76,7 @@ export const DiscussForm = (actions) => {
               name="name"
               type="text"
               value={data.name}
-              placeholder="Your name"
+              placeholder={text.form.name}
               className=""
               onChange={actions.onChange}
             />
@@ -86,7 +85,7 @@ export const DiscussForm = (actions) => {
               name="company"
               type="text"
               value={data.company}
-              placeholder="Your company"
+              placeholder={text.form.company}
               className=""
               onChange={actions.onChange}
             />
@@ -98,7 +97,7 @@ export const DiscussForm = (actions) => {
               name="email"
               type="email"
               value={data.email}
-              placeholder="Your email address"
+              placeholder={text.form.email}
               className=""
               onChange={actions.onChange}
             />
@@ -107,7 +106,7 @@ export const DiscussForm = (actions) => {
               name="phone"
               type="number"
               value={data.phone}
-              placeholder="Your contact number"
+              placeholder={text.form.phone}
               className=""
               onChange={actions.onChange}
             />
@@ -119,7 +118,7 @@ export const DiscussForm = (actions) => {
               name="projectIdea"
               type="textarea"
               value={data.projectIdea}
-              placeholder="Explain about your project idea"
+              placeholder={text.form.projectIdea}
               className=""
               onChange={actions.onChange}
             />
@@ -129,7 +128,7 @@ export const DiscussForm = (actions) => {
             type="button"
             onClick={submitEmail}
           >
-            Submit
+            {text.form.submit}
           </Button>
         </div>
       </Fade>

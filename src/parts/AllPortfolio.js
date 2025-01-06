@@ -15,9 +15,9 @@ import {
 import Button from 'elements/Button';
 
 export default function AllPortfolio({ data }) {
-  const mobile = data.filter((item) => item.type === 'Mobile Apps');
+  const mobile = data.projects.filter((item) => item.type === 'Mobile Apps');
 
-  const website = data.filter((item) => item.type === 'Website');
+  const website = data.projects.filter((item) => item.type === 'Website');
 
   return (
     <Fade bottom>
@@ -99,7 +99,7 @@ export default function AllPortfolio({ data }) {
           <TabPanel>
             <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
               {
-                data.map((item, index) => (
+                data.projects.map((item, index) => (
                   <Fade bottom triggerOnce delay={500 * index} key={index}>
                     <Button type="link" href={`/project/${item.id}`}>
                       <div className="group rounded-2xl shadow-xl w-auto w-11/12 m-3 transform transition duration-500 hover:scale-110 portofolio-card">

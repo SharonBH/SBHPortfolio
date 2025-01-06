@@ -1,28 +1,25 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-filename-extension */
-import React, { Component } from 'react';
+import React from "react";
 
-import Header from 'parts/Header';
-import HeroTeam from 'parts/HeroTeam';
-import AllTeam from 'parts/AllTeam';
-import Footer from 'parts/Footer';
+import Header from "parts/Header";
+import HeroTeam from "parts/HeroTeam";
+import AllTeam from "parts/AllTeam";
+import Footer from "parts/Footer";
+import { useLanguage } from 'json/LanguageContext';
 
-import { TeamMembers } from 'json/landingPageData';
+function TeamPage() {
+  const { data } = useLanguage();
 
-export default class TeamPage extends Component {
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
-
-  render() {
-    return (
-      <>
-        <Header />
-        <HeroTeam />
-        <AllTeam data={TeamMembers} />
-        <Footer />
-      </>
-    );
-  }
+  return (
+    <>
+      <Header data={data.Header} />
+      <HeroTeam data={data.Hero} />
+      <AllTeam data={data.TeamMembers} />
+      <Footer data={data.Footer} />
+    </>
+  );
 }
+
+export default TeamPage;

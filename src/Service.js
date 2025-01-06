@@ -7,9 +7,16 @@ import React from "react";
 
 import { Fade } from "react-awesome-reveal";
 
-export default function Service({ data }) {
-  // console.log("Service component data:", data);
-  if (!data) {
+type ServiceProps = {
+  data: {
+    imageUrl: string,
+    title: string,
+    animation: string,
+  }[],
+};
+export default function Service({ ServiceProps }) {
+  console.log("Service component data:", ServiceProps);
+  if (!ServiceProps) {
     return <p>No data available</p>; // or return a loading indicator or a message
   }
   return (
@@ -17,17 +24,17 @@ export default function Service({ data }) {
       <div className="container mx-auto pt-20 pb-28">
         <Fade direction="right" triggerOnce>
           <h1 className="text-5xl text-theme-blue text-center font-bold">
-            {data.header}
+            Our Service
           </h1>
         </Fade>
         <Fade direction="left" triggerOnce>
           <p className="font-light text-lg text-gray-400 text-center mb-12">
-            {data.tagLine}
+            We are ready to scale up your business with our great service.
           </p>
         </Fade>
 
         <div className="grid grid-rows-3 px-10 gap-8 sm:grid-cols-3 sm:grid-rows-1 sm:gap-6 xl:gap-16">
-          {data.items.map((item) => (
+          {data.map((item) => (
             // eslint-disable-next-line react/no-array-index-key
             <Fade direction={item.animation} delay={500} triggerOnce>
               <div>

@@ -38,7 +38,9 @@
     "react/jsx-indent": "off",
     "react/jsx-props-no-multi-spaces": "off",
     "react/jsx-closing-tag-location": "off",
+    "react/jsx-props-no-spreading": "off",
     "quotes": "off",
-    "react/jsx-one-expression-per-line": "off"
+    "react/jsx-one-expression-per-line": "off",
+    "linebreak-style": "off"
   }
 }
