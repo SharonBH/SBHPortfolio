@@ -31,7 +31,7 @@ export default function Service({ data }) {
             // eslint-disable-next-line react/no-array-index-key
             <Fade direction={item.animation} delay={500} triggerOnce>
               <div>
-                <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105">
+                <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-blue transform transition duration-500 hover:scale-105">
                   <img
                     src={item.imageUrl}
                     alt="Service"

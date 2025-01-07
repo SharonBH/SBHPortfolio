@@ -51,7 +51,7 @@ export default function Portfolio({ data }) {
       </div>
 
       <Fade bottom triggerOnce>
-        <Button href="/project" type="link" className="flex flex-grow-0 w-36 h-12 sm:w-40 sm:h-14 lg:w-44 lg:h-16 xl:w-36 xl:h-12 text-theme-purple px-5 border border-theme-purple items-center mt-14 rounded-full justify-center transition duration-300 hover:bg-theme-purple hover:text-white">
+        <Button href="/project" type="link" className="flex flex-grow-0 w-36 h-12 sm:w-40 sm:h-14 lg:w-44 lg:h-16 xl:w-36 xl:h-12 text-theme-blue px-5 border border-theme-blue items-center mt-14 rounded-full justify-center transition duration-300 hover:bg-theme-blue hover:text-white">
           <p className="font-normal py-3 lg:text-lg xl:text-base">
 {data.action}          </p>
           <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -96,7 +96,7 @@ export default function Header({ data }) {
         </li>
         <li>
           <Button
-            className="font-medium text-lg mx-auto ml-3 px-6 py-2 bg-theme-purple text-white rounded-full border-2 border-theme-purple hover:bg-dark-theme-purple border-purple-800 transition duration-200"
+            className="font-medium text-lg mx-auto ml-3 px-6 py-2 bg-theme-blue text-white rounded-full border-2 border-theme-blue hover:bg-dark-theme-blue border-purple-800 transition duration-200"
             type="link"
             href="/discuss-project"
           >
@@ -154,7 +154,7 @@ export default function Header({ data }) {
             </li>
             <li className="mx-auto my-9 bg-white">
               <Button
-                className="font-bold mx-auto px-5 py-2 bg-theme-purple text-white rounded-full border-2 border-theme-purple hover:bg-dark-theme-purple border-purple-800 transition duration-200"
+                className="font-bold mx-auto px-5 py-2 bg-theme-blue text-white rounded-full border-2 hover:bg-dark-theme-blue border-blue-800 transition duration-200"
                 type="link"
                 href="/discuss-project"
               >

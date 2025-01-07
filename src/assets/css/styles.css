@@ -7,7 +7,7 @@ section {
 }
 
 .active-link {
-  @apply text-theme-purple;
+  @apply text-theme-blue;
 }
 
 .header {

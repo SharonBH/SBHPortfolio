@@ -39,13 +39,13 @@ import UIUX1 from "../assets/images/TeamMembers/UIUX1.jpg";
 import UIUX2 from "../assets/images/TeamMembers/UIUX2.jpg";
 
 export const Hero = {
-  title: "מעצימים את העסקים שלך לשגשג!",
-  subtitle: "מעצימים עסקים קטנים ובינוניים לשגשג בעולם ההייטק.",
-  action: "ראה את העבודה שלנו",
-  protfolioHeader: "התיק שלנו",
+  title: "ההצלחה שלך היא העסק שלנו!",
+  subtitle: "מעצימים עסקים לשגשג בעולם ההייטק.",
+  action: "צפה בפרויקטים שלנו",
+  protfolioHeader: "הפרויקטים שלנו",
   portfolioSubtitle: "עשינו כל כך הרבה פרויקטים וכל הלקוחות שלנו אוהבים את זה.",
   teamHeader: "הצוות שלנו",
-  teamSubtitle: "הצוות שלנו מלא באנשים נלהבים ומוכן להפוך את תוכנת החלומות שלך למציאות.",
+  teamSubtitle: "הצוות שלנו מלא באנשים נלהבים ומוכן להפוך את החלומות שלך למציאות.",
 };
 
 export const Services = {
@@ -63,7 +63,7 @@ export const Services = {
       animation: "למעלה",
     },
     {
-      title: "עיצוב UI/UX",
+      title: "מערכות מידע",
       imageUrl: UIUX,
       animation: "ימין",
     },
@@ -72,7 +72,7 @@ export const Services = {
 
 export const Portfolios = {
   title: "פרויקטים נבחרים",
-  subtitle: "אנחנו מוכנים להגדיל את העסק שלך עם תוצאות העבודה המצוינות שלנו.",
+  subtitle: "אנחנו מחוייבים להגדיל את העסק שלך עם תוצאות העבודה המצוינות שלנו.",
   action: "ראה את העבודה שלנו",
   projects: [
     {
@@ -128,10 +128,10 @@ export const Portfolios = {
 };
 
 export const Discuss = {
-  title: "בואו נדון",
-  action: "דון בפרויקט",
+  title: "בואו נדבר",
+  action: "הפרויקט שלך",
   description:
-    "אנא מלא את הטופס למטה כדי לדון בפרויקט שלך ונחזור אליך תוך פחות מ-23 שעות.",
+    "אנא מלא את הטופס למטה כדי לדבר על הפרויקט שלך ונחזור אליך תוך פחות מ-23 שעות.",
   form: {
     name: "שמך",
     company: "החברה שלך",
@@ -189,7 +189,7 @@ export const Header = {
 
 export const Advantages = {
   title: "למה לבחור בנו",
-  description: "למה כדאי לבחור בנו לטפל בפרויקט שלך.",
+  description: "למה כדאי לבחור בנו לבנות את הפרויקט שלך.",
   items: [
     [
       {
