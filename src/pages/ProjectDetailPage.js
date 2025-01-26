@@ -13,7 +13,7 @@ import Footer from "parts/Footer";
 function ProjectDetailPage() {
   const { data } = useLanguage();
   const { id } = useParams();
-  const detailData = data.Portfolios.filter((item) => item.id === id);
+  const detailData = data.Portfolios.projects.filter((item) => item.id === id);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

@@ -1,17 +1,15 @@
 /* eslint-disable import/extensions */
 
 // Services Img Imports
-import Web from "../assets/images/Services/Web.png";
-import Mobile from "../assets/images/Services/Mobile.png";
-import UIUX from "../assets/images/Services/Design.png";
+import Web from "../assets/images/Services/web.jpeg";
+import Mobile from "../assets/images/Services/mobile.jpeg";
+import Data from "../assets/images/Services/data.jpeg";
+import Consult from "../assets/images/Services/consult.png";
 
 // Portfolio Img Imports
 import Recruiting from "../assets/images/Portfolio/Recruiting.png";
 import Stream from "../assets/images/Portfolio/Stream.png";
 import Freelance from "../assets/images/Portfolio/Freelance.png";
-import Aura from "../assets/images/Portfolio/Aura.png";
-import Surtido from "../assets/images/Portfolio/Surtido.png";
-import ManagementApp from "../assets/images/Portfolio/ManagementApp.png";
 
 // Advantages
 import Communicative from "../assets/images/Advantages/Communicative.png";
@@ -39,33 +37,67 @@ import UIUX1 from "../assets/images/TeamMembers/UIUX1.jpg";
 import UIUX2 from "../assets/images/TeamMembers/UIUX2.jpg";
 
 export const Hero = {
-  title: "ההצלחה שלך היא העסק שלנו!",
-  subtitle: "מעצימים עסקים לשגשג בעולם ההייטק.",
-  action: "צפה בפרויקטים שלנו",
-  protfolioHeader: "הפרויקטים שלנו",
-  portfolioSubtitle: "עשינו כל כך הרבה פרויקטים וכל הלקוחות שלנו אוהבים את זה.",
+  title: "ההצלחה שלך היא העסק שלי!",
+  subtitle: "עם שנים של ניסיון בתעשיית ההייטק, אני מסייע לעסקים קטנים ובינוניים לממש את הפוטנציאל הטכנולוגי והחדשנות כדי להשיג את מטרותיהם. בין אם אתם זקוקים להנחיה בנושא טרנספורמציה דיגיטלית או לייעוץ ממוקד, אני כאן כדי לתמוך בצמיחה שלכם.",
+  action: "עוד עלינו",
+  protfolioHeader: "הפרויקטים שלי",
+  portfolioSubtitle: "",
   teamHeader: "הצוות שלנו",
   teamSubtitle: "הצוות שלנו מלא באנשים נלהבים ומוכן להפוך את החלומות שלך למציאות.",
+  serviceHeader: "השירותים שלי",
+  serviceSubtitle: "מאתרים קטנים ליישומי רשת גדולים ומערכות נתונים, אני כאן כדי לספק לכם פתרונות מותאמים אישית.",
+  aboutHeader: "קצת עלי",
+  aboutSubtitle: "אני מתמחה בפיתוח תוכנה ומערכות מידע ומציע שירותי ייעוץ ופיתוח בתחום הטכנולוגיה והמידע.",
+  aboutPoints: [
+    "מנהל טכנולוגיה מנוסה עם למעלה מ-20 שנות ניסיון.",
+    "מומחה במחשוב ענן, פיתוח תוכנה וניהול נתונים.",
+    "מנהל צוותי פיתוח מצטיינים ומתכנן ארכיטקטורות מערכות עמידות.",
+    "מפתח פרויקטים משמעותיים העומדים בציפיות הלקוח.",
+    "אוהב מטכנולוגיה ושואף תמיד ללמוד ולצמוח.",
+  ],
+};
+
+export const About = {
+  hero: {
+    header: "קצת עלי",
+    subtitle: "אני מתמחה בפיתוח תוכנה ומערכות מידע ומציע שירותי ייעוץ ופיתוח בתחום הטכנולוגיה והמידע.",
+  },
+  points: [
+    "מנהל טכנולוגיה מנוסה עם למעלה מ-20 שנות ניסיון.",
+    "מומחה במחשוב ענן, פיתוח תוכנה וניהול נתונים.",
+    "מנהל צוותי פיתוח מצטיינים ומתכנן ארכיטקטורות מערכות עמידות.",
+    "מפתח פרויקטים משמעותיים העומדים בציפיות הלקוח.",
+    "אוהב מטכנולוגיה ושואף תמיד ללמוד ולצמוח.",
+  ],
 };
 
 export const Services = {
-  header: "השירותים שלנו",
-  tagLine: "מעצימים עסקים קטנים ובינוניים לשגשג בעולם ההייטק.",
+  header: "השירותים שלי",
+  tagLine: "אני מציע מגוון שירותים  שמטרתם לעזור לעסקים קטנים ובינוניים להתקדם בעולם הטכנולוגי המשתנה ללא הרף.",
   items: [
     {
-      title: "פיתוח אתרים",
+      title: "פיתוח אתרים ומערכות WEB",
       imageUrl: Web,
       animation: "שמאל",
+      services: ["אתרי תדמית", "אתרי מכירות", "מערכות ניהול", "אתרי תוכן"],
     },
     {
-      title: "פיתוח מובייל",
+      title: "פיתוח אפליקציות/מובייל",
       imageUrl: Mobile,
       animation: "למעלה",
+      services: ["אפליקציות ניידות", "אפליקציות חיצוניות", "אפליקציות פנימיות"],
     },
     {
-      title: "מערכות מידע",
-      imageUrl: UIUX,
+      title: "פיתוח מערכות מידע",
+      imageUrl: Data,
       animation: "ימין",
+      services: ["מערכות מתואמות אישית", "מערכות CMS", "מערכות BI", "מערכות ניהול"],
+    },
+    {
+      title: "יעוץ והדרכה",
+      imageUrl: Consult,
+      animation: "ימין",
+      services: ["יעוץ לסארטאפים וחברות", "ייעוץ בנושא טכנולוגיה", "ייעוץ בנושא טרנספורמציה דיגיטלית", "ייעוץ בנושא ניהול מוצר"],
     },
   ],
 };
@@ -77,10 +109,10 @@ export const Portfolios = {
   projects: [
     {
       id: "asd1293uasdads1",
-      title: "אפליקציית גיוס",
+      title: "מערכת ניהול סטודיו כושר",
       imageUrl: Recruiting,
-      type: "אפליקציות מובייל",
-      responsibility: ["פיתוח מובייל", "עיצוב UI/UX"],
+      type: "מערכת מתואמת אישית",
+      responsibility: ["מערכת ניהול", "פיתוח אתר", "עיצוב UI/UX"],
       credit: "https://dribbble.com/shots/15164950-Recruiting-app",
     },
     {
@@ -99,39 +131,15 @@ export const Portfolios = {
       responsibility: ["פיתוח מובייל", "עיצוב UI/UX"],
       credit: "https://dribbble.com/shots/15223131-Freelance-Mobile-App-Concept",
     },
-    {
-      id: "asd1293ufgdfgs4",
-      title: "Aura",
-      imageUrl: Aura,
-      type: "אתר אינטרנט",
-      responsibility: ["פיתוח אתרים", "עיצוב UI/UX"],
-      credit: "https://dribbble.com/shots/15176338-Aura-Website-Main-Page",
-    },
-    {
-      id: "asd1293ulskmnb5",
-      title: "Surtido Rico",
-      imageUrl: Surtido,
-      type: "אתר אינטרנט",
-      responsibility: ["פיתוח אתרים", "עיצוב UI/UX"],
-      credit: "https://dribbble.com/shots/15173118-Surtido-Rico",
-    },
-    {
-      id: "asd1293ulkmnbj6",
-      title: "ניהול קורסים",
-      imageUrl: ManagementApp,
-      type: "אתר אינטרנט",
-      responsibility: ["פיתוח אתרים", "עיצוב UI/UX"],
-      credit:
-      "https://dribbble.com/shots/15197890-Courses-Management-and-Promoting-Web-App",
-    },
   ],
 };
 
 export const Discuss = {
   title: "בואו נדבר",
-  action: "הפרויקט שלך",
+  subtitle: "לפגישת יעוץ חינם עם צוות המומחים שלנו.",
+  action: "לחץ כאן להתחיל",
   description:
-    "אנא מלא את הטופס למטה כדי לדבר על הפרויקט שלך ונחזור אליך תוך פחות מ-23 שעות.",
+    "אנא מלא את הטופס למטה כדי לדבר על הפרויקט שלך ונחזור אליך בהקדם.",
   form: {
     name: "שמך",
     company: "החברה שלך",
@@ -166,18 +174,19 @@ export const Header = {
   home: "בית",
   services: "שירותים",
   portfolio: "תיק עבודות",
-  discuss: "דון",
-  project: "פרויקט",
+  discuss: "התיעצות",
+  project: "פרויקטים",
+  about: "אודות",
   team: "צוות",
   contact: "צור קשר",
-  discussProject: "דון בפרויקט",
+  discussProject: "פגישת יעוץ חינם",
   seeOurWork: "ראה את העבודה שלנו",
   contactUs: "צור קשר",
   aboutUs: "אודותינו",
   ourServices: "השירותים שלנו",
   ourPortfolio: "תיק העבודות שלנו",
   ourTeam: "הצוות שלנו",
-  discussYourProject: "דון בפרויקט שלך",
+  discussYourProject: "פגישה ללא התחייבות",
   contactDetails: "פרטי קשר",
   contactForm: "טופס יצירת קשר",
   contactInfo: "מידע ליצירת קשר",
@@ -193,25 +202,25 @@ export const Advantages = {
   items: [
     [
       {
-        title: "תקשורתי",
-        description: "אנחנו מתקשרים את רעיונות הפרויקט וההתקדמות שלנו כדי להבהיר.",
-        imageUrl: Communicative,
+        title: "ניסיון",
+        description: "מעל 20 שנות ניסיון בפיתוח תוכנה, ניהול מוצר וטרנספורמציה דיגיטלית.",
+        imageUrl: Management,
       },
       {
-        title: "ניהול",
-        description: "אנחנו מנהלים את הפרויקט שלנו כראוי כדי שהפרויקט יבוצע היטב.",
-        imageUrl: Management,
+        title: "חדשנות",
+        description: "שימוש בטכנולוגיות מתקדמות למתן פתרונות מעשיים.",
+        imageUrl: Communicative,
       },
     ],
     [
       {
-        title: "שיתופי פעולה",
-        description: "הצוות שלנו מאוד שיתופי כדי שהפרויקט שלנו יבוצע היטב.",
+        title: "שיתוף פעולה",
+        description: "שותפות אמיתית עם הלקוח ליצירת הצלחה משותפת.",
         imageUrl: Collaborative,
       },
       {
-        title: "מועדף",
-        description: "עשינו כל כך הרבה פרויקטים וכל הלקוחות שלנו אוהבים את זה.",
+        title: "יושרה",
+        description: "שקיפות ואמינות בכל שלב",
         imageUrl: Favorite,
       },
     ],
@@ -221,6 +230,7 @@ export const Advantages = {
 export const Testimonials = {
   title: "המלצות",
   subtitle: "מה הם אמרו עלינו.",
+  dir: "rtl",
   reviews: [
     {
       id: 1,

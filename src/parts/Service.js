@@ -3,6 +3,7 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable import/extensions */
 
+import Button from "elements/Button";
 import React from "react";
 
 import { Fade } from "react-awesome-reveal";
@@ -26,12 +27,13 @@ export default function Service({ data }) {
           </p>
         </Fade>
 
-        <div className="grid grid-rows-3 px-10 gap-8 sm:grid-cols-3 sm:grid-rows-1 sm:gap-6 xl:gap-16">
+        <div className="grid grid-rows-4 px-10 gap-8 sm:grid-cols-4 sm:grid-rows-1 sm:gap-6 xl:gap-16">
           {data.items.map((item) => (
             // eslint-disable-next-line react/no-array-index-key
             <Fade direction={item.animation} delay={500} triggerOnce>
               <div>
-                <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-blue transform transition duration-500 hover:scale-105">
+                <Button type="link" href="/services">
+                <div className="bg-w</a>hite group rounded-2xl shadow-2xl border border-light-theme-blue transform transition duration-500 hover:scale-105">
                   <img
                     src={item.imageUrl}
                     alt="Service"
@@ -41,6 +43,7 @@ export default function Service({ data }) {
                     {item.title}
                   </h2>
                 </div>
+                </Button>
               </div>
             </Fade>
           ))}

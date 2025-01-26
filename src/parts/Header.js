@@ -75,15 +75,15 @@ export default function Header({ data }) {
         <li className="py-2 lg:py-0">
           <Button
             className={`${
-              path === "/team" ? "active-link" : ""
+              path === "/services" ? "active-link" : ""
             } font-medium text-lg px-5 no-underline hover:underline`}
             type="link"
-            href="/team"
+            href="/services"
           >
-            {data.team}
+            {data.services}
           </Button>
         </li>
-        <li className="py-2 lg:py-0">
+       {/*  <li className="py-2 lg:py-0">
           <Button
             className={`${
               path === "/project" ? "active-link" : ""
@@ -92,6 +92,17 @@ export default function Header({ data }) {
             href="/project"
           >
             {data.project}
+          </Button>
+        </li> */}
+        <li className="py-2 lg:py-0">
+          <Button
+            className={`${
+              path === "/about" ? "active-link" : ""
+            } font-medium text-lg px-5 no-underline hover:underline`}
+            type="link"
+            href="/about"
+          >
+            {data.about}
           </Button>
         </li>
         <li>

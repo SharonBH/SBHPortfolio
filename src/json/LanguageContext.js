@@ -7,11 +7,12 @@ import { getData } from "./landingPageData.js";
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('he');
   const [data, setData] = useState(getData(language));
 
   useEffect(() => {
     setData(getData(language));
+    document.documentElement.setAttribute('dir', language === 'he' ? 'rtl' : 'ltr');
   }, [language]);
 
   const toggleLanguage = () => {

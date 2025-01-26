@@ -30,8 +30,7 @@ export default function Discuss({ data }) {
           </div>
           <Fade delay={300} triggerOnce>
             <p className="font-light p-5 sm:p-0 text-lg sm:text-xl lg:text-2xl xl:text-xl mb-1">
-              Lets discuss it and make your dream software come true!
-            </p>
+{data.subtitle}            </p>
           </Fade>
         </div>
       </section>

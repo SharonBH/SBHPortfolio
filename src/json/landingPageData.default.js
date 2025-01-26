@@ -1,17 +1,15 @@
 /* eslint-disable import/extensions */
 
 // Services Img Imports
-import Web from "../assets/images/Services/Web.png";
-import Mobile from "../assets/images/Services/Mobile.png";
-import UIUX from "../assets/images/Services/Design.png";
+import Web from "../assets/images/Services/web.jpeg";
+import Mobile from "../assets/images/Services/mobile.jpeg";
+import Data from "../assets/images/Services/data.jpeg";
+import Consult from "../assets/images/Services/consult.png";
 
 // Portfolio Img Imports
 import Recruiting from "../assets/images/Portfolio/Recruiting.png";
 import Stream from "../assets/images/Portfolio/Stream.png";
 import Freelance from "../assets/images/Portfolio/Freelance.png";
-import Aura from "../assets/images/Portfolio/Aura.png";
-import Surtido from "../assets/images/Portfolio/Surtido.png";
-import ManagementApp from "../assets/images/Portfolio/ManagementApp.png";
 
 // Advantages
 import Communicative from "../assets/images/Advantages/Communicative.png";
@@ -42,16 +40,33 @@ export const Hero = {
   title: "Empowering Your Businesses to Thrive!",
   subtitle:
     "Empowering Small and Medium Businesses to Thrive in the Hi-Tech World.",
-  action: "See Our Work",
+  action: "About Us",
   protfolioHeader: "Our Portfolio",
   portfolioSubtitle: "We've done so many project and all of our client love it.",
   teamHeader: "Our Team",
   teamSubtitle: "Our team is full of passionate people and ready to make your dream software come true.",
+  serviceHeader: "Our Services",
+  serviceSubtitle: "from small websites to large scale web applications and data solutions, we got you covered.",
+  aboutHeader: "About Us",
+  aboutSubtitle: "We are a team of creative and passionate people that provide IT solutions for small and medium businesses.",
+};
 
+export const About = {
+  hero: {
+    header: "About Us",
+    subtitle: "We are a team of creative and passionate people that provide IT solutions for small and medium businesses.",
+  },
+  points: [
+    "Experienced technology manager with over 20 years of experience.",
+    "Expert in cloud computing, software development, and data management.",
+    "Leads outstanding development teams and designs robust system architectures.",
+    "Develops significant projects that meet client expectations.",
+    "Passionate about technology and always eager to learn and grow.",
+  ],
 };
 
 export const Services = {
-  header: "Our Service",
+  header: "Our Services",
   tagLine:
     "Empowering Small and Medium Businesses to Thrive in the Hi-Tech World.",
   items: [
@@ -59,16 +74,25 @@ export const Services = {
       title: "Web Development",
       imageUrl: Web,
       animation: "left",
+      services: ["Responsive Design", "Custom web solutions", "E-commerce Solutions"],
     },
     {
-      title: "Mobile Development",
+      title: "Application/Mobile Development",
       imageUrl: Mobile,
       animation: "up",
+      services: ["iOS & Android Apps", "Cross-Platform Development", "App Store Deployment"],
     },
     {
-      title: "UI/UX Design",
-      imageUrl: UIUX,
+      title: "Data Solutions",
+      imageUrl: Data,
       animation: "right",
+      services: ["Data Analysis", "Data Visualization", "Big Data Solutions"],
+    },
+    {
+      title: "Consultancy Services",
+      imageUrl: Consult,
+      animation: "right",
+      services: ["IT Consultancy", "Project Management", "Business dgitization"],
     },
   ],
 };
@@ -102,36 +126,12 @@ export const Portfolios = {
       responsibility: ["Mobile Development", "UI/UX Design"],
       credit: "https://dribbble.com/shots/15223131-Freelance-Mobile-App-Concept",
     },
-    {
-      id: "asd1293ufgdfgs4",
-      title: "Aura",
-      imageUrl: Aura,
-      type: "Website",
-      responsibility: ["Web Development", "UI/UX Design"],
-      credit: "https://dribbble.com/shots/15176338-Aura-Website-Main-Page",
-    },
-    {
-      id: "asd1293ulskmnb5",
-      title: "Surtido Rico",
-      imageUrl: Surtido,
-      type: "Website",
-      responsibility: ["Web Development", "UI/UX Design"],
-      credit: "https://dribbble.com/shots/15173118-Surtido-Rico",
-    },
-    {
-      id: "asd1293ulkmnbj6",
-      title: "Courses Management",
-      imageUrl: ManagementApp,
-      type: "Website",
-      responsibility: ["Web Development", "UI/UX Design"],
-      credit:
-      "https://dribbble.com/shots/15197890-Courses-Management-and-Promoting-Web-App",
-    },
   ],
 };
 
 export const Discuss = {
   title: "Lets Discuss",
+  subtitle: "Lets discuss it and make your dream software come true!",
   action: "Discuss Project",
   description:
     "Please fill out the form below to discuss your project and we'll get back to you in less than 23 hours.",
@@ -171,6 +171,7 @@ export const Header = {
   portfolio: "Portfolio",
   discuss: "Discuss",
   project: "Project",
+  about: "About",
   team: "Team",
   contact: "Contact",
   discussProject: "Discuss Project",
@@ -227,6 +228,7 @@ export const Advantages = {
 export const Testimonials = {
   title: "Testimonials",
   subtitle: "What they said about us.",
+  dir: "ltr",
   reviews: [
     {
       id: 1,
