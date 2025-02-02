@@ -25,7 +25,7 @@ function App() {
         <Route exact path="/services" element={<ServicesPage />} />
         <Route exact path="/about" element={<AboutPage />} />
         <Route exact path="/discuss-project" element={<DiscussProjectPage />} />
-        <Route path="**" element={<NotFoundPage />} />
+        <Route path="*/*" element={<NotFoundPage />} />
       </Routes>
     </>
   );

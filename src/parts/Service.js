@@ -28,9 +28,9 @@ export default function Service({ data }) {
         </Fade>
 
         <div className="grid grid-rows-4 px-10 gap-8 sm:grid-cols-4 sm:grid-rows-1 sm:gap-6 xl:gap-16">
-          {data.items.map((item) => (
+          {data.items.map((item, index) => (
             // eslint-disable-next-line react/no-array-index-key
-            <Fade direction={item.animation} delay={500} triggerOnce>
+            <Fade key={index} direction={item.animation} delay={500} triggerOnce>
               <div>
                 <Button type="link" href="/services">
                 <div className="bg-w</a>hite group rounded-2xl shadow-2xl border border-light-theme-blue transform transition duration-500 hover:scale-105">

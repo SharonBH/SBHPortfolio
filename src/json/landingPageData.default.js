@@ -45,8 +45,6 @@ export const Hero = {
   portfolioSubtitle: "We've done so many project and all of our client love it.",
   teamHeader: "Our Team",
   teamSubtitle: "Our team is full of passionate people and ready to make your dream software come true.",
-  serviceHeader: "Our Services",
-  serviceSubtitle: "from small websites to large scale web applications and data solutions, we got you covered.",
   aboutHeader: "About Us",
   aboutSubtitle: "We are a team of creative and passionate people that provide IT solutions for small and medium businesses.",
 };
@@ -69,30 +67,45 @@ export const Services = {
   header: "Our Services",
   tagLine:
     "Empowering Small and Medium Businesses to Thrive in the Hi-Tech World.",
+  hero: {
+    header: "Our Services",
+    subtitle: "from small websites to large scale web applications and data solutions, we got you covered.",
+    points: [
+      "from small websites to large scale web applications and data solutions, we got you covered.",
+      "with more than 20 years of experience, we are ready to make your dream software come true.",
+      "need a CTO as a service? we are ready to help you.",
+      "we are ready to scale up your business with our great work result.",
+      "advanced data solutions for your business.",
+    ],
+  },
   items: [
     {
       title: "Web Development",
+      description: "We provide custom web solutions for your business.",
       imageUrl: Web,
       animation: "left",
       services: ["Responsive Design", "Custom web solutions", "E-commerce Solutions"],
     },
     {
       title: "Application/Mobile Development",
+      description: "We provide custom mobile solutions for your business.",
       imageUrl: Mobile,
       animation: "up",
       services: ["iOS & Android Apps", "Cross-Platform Development", "App Store Deployment"],
     },
     {
       title: "Data Solutions",
+      description: "We provide data solutions for your business.",
       imageUrl: Data,
       animation: "right",
       services: ["Data Analysis", "Data Visualization", "Big Data Solutions"],
     },
     {
       title: "Consultancy Services",
+      description: "We provide consultancy services for your business.",
       imageUrl: Consult,
       animation: "right",
-      services: ["IT Consultancy", "Project Management", "Business dgitization"],
+      services: ["IT Consultancy", "CTO as a service", "Business dgitization"],
     },
   ],
 };
