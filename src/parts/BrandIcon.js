@@ -15,7 +15,7 @@ export default function BrandIcon() {
     >
       <p className="text-theme-blue text-4xl font-medium ">
         SBH
-        <span className="text-theme-purple">studio</span>
+        <span className="text-theme-purple">#DEV</span>
       </p>
     </Button>
   );

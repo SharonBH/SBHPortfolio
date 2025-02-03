@@ -19,7 +19,7 @@ export default function Footer({ data }) {
               { data.tagLine }
             </p>
           </div>
-          <div className="w-1/3 mt-0 ml-16 mr-0 sm:ml-0 sm:mr-5">
+          <div className="w-1/3 mt-0 ml-16 sm:ml-0 mr-8">
             <h1 className="text-lg text-theme-blue pt-4 pb-2">
               {data.addressHeader}
             </h1>
@@ -29,7 +29,7 @@ export default function Footer({ data }) {
             <p className="text-lg text-gray-400 font-light">
 {data.address}            </p>
           </div>
-          <div className="w-1/3 ml-16 sm:ml-0 mt-0">
+          <div className="w-1/3 ml-16 sm:ml-0 mt-0 mr-8">
             <h1 className="text-lg text-theme-blue pt-4 pb-2">
               {data.socialHeader}
             </h1>

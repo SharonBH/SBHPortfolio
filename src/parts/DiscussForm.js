@@ -39,10 +39,11 @@ export const DiscussForm = (actions) => {
       && projectIdea !== ''
     ) {
       emailjs.send(
-        'service_h4gtndg',
-        'template_a9tvs7a',
-        templateParams,
-        'user_csqIxzN5mKsl1yw4ffJzV',
+        'service_nh3qpeo',
+        'template_cl95ncj',
+        templateParams, {
+          publicKey: 'rKj7eMi6MOmYV3Te9',
+        },
       )
         .then(() => {
           toast.success(text.successMessage);

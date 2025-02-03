@@ -111,8 +111,9 @@ export default function Header({ data }) {
             type="link"
             href="/discuss-project"
           >
-{data.discussProject}          </Button>
-          <Button onClick={toggleLanguage}>
+          {data.discussProject}          </Button>
+        </li>
+        <li> <Button onClick={toggleLanguage}>
             {language === "en" ? "he" : "en"}
           </Button>
         </li>
@@ -147,9 +148,9 @@ export default function Header({ data }) {
                   path === "/team" ? "active-link" : ""
                 } font-medium px-10 no-underline hover:underline`}
                 type="link"
-                href="/team"
+                href="/services"
               >
-                {data.team}
+                {data.services}
               </Button>
             </li>
             <li className="py-2 bg-white">
@@ -158,9 +159,9 @@ export default function Header({ data }) {
                   path === "/project" ? "active-link" : ""
                 } font-medium px-10 no-underline hover:underline`}
                 type="link"
-                href="/project"
+                href="/about"
               >
-                {data.project}
+                {data.about}
               </Button>
             </li>
             <li className="mx-auto my-9 bg-white">
@@ -171,6 +172,10 @@ export default function Header({ data }) {
               >
 {data.discussProject}              </Button>
             </li>
+            <li> <Button onClick={toggleLanguage}>
+            {language === "en" ? "he" : "en"}
+          </Button>
+        </li>
           </ul>
           {/* </Fade> */}
         </div>

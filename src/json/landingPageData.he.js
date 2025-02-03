@@ -246,8 +246,8 @@ export const Testimonials = {
   reviews: [
     {
       id: 1,
-      name: "סשה רוז",
-      company: "בעלים, Surveyor Corps",
+      name: "ירון הראל",
+      company: "בעלים, Pulse Studio",
       testimoni:
       "תודה ל-SBHstudio, אתם הכי טובים! תמשיכו בעבודה הנהדרת!",
       imageUrl: Sasha,

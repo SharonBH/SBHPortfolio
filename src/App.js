@@ -3,8 +3,8 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable-next-line no-unused-vars */
-import { Route, Routes } from "react-router-dom";
-
+import { Route, Routes, useLocation } from "react-router-dom";
+import React, { useLayoutEffect } from 'react';
 import LandingPage from "pages/LandingPage";
 import ProjectPage from "pages/ProjectPage";
 import NotFoundPage from "pages/NotFoundPage";
@@ -16,6 +16,10 @@ import ServicesPage from "pages/ServicesPage";
 import AboutPage from "pages/AboutPage";
 
 function App() {
+  const location = useLocation();
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   return (
     <>
       <Routes>
