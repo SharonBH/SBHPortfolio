@@ -52,10 +52,10 @@ export const DiscussForm = (actions) => {
           createdAt: serverTimestamp(), // Optional: store the submit timestamp
         });
         emailjs.send(
-          'service_nh3qpeo',
-          'template_cl95ncj',
+          'service_',
+          'template_',
           templateParams, {
-            publicKey: 'rKj7eMi6MOmYV3Te9',
+            publicKey: '',
           },
         )
           .then(() => {
