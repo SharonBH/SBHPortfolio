@@ -39,10 +39,10 @@ export const DiscussForm = (actions) => {
       && projectIdea !== ''
     ) {
       emailjs.send(
-        'service_nh3qpeo',
-        'template_cl95ncj',
+        'service_',
+        'template_',
         templateParams, {
-          publicKey: 'rKj7eMi6MOmYV3Te9',
+          publicKey: '12345556',
         },
       )
         .then(() => {
