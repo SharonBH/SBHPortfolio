@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/extensions */
 /* eslint-disable linebreak-style */
 /* eslint-disable no-useless-escape */
 /* eslint-disable react/destructuring-assignment */
@@ -6,7 +8,6 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/prop-types */
 import React from 'react';
-
 import { Fade } from 'react-awesome-reveal';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import * as emailjs from '@emailjs/browser';
@@ -17,10 +18,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { Form } from 'elements/Form';
 import Button from 'elements/Button';
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from '../firebaseConfig';
 
 export const DiscussForm = (actions) => {
   const { data, resetForm, text } = actions;
-  const submitEmail = () => {
+  const submitEmail = async () => {
     const {
       name, company, email, phone, projectIdea,
     } = data;
@@ -33,24 +36,37 @@ export const DiscussForm = (actions) => {
 
     if (
       name !== ''
-      && company !== ''
+      // && company !== ''
       && email !== ''
       && phone !== ''
       && projectIdea !== ''
     ) {
-      emailjs.send(
-        'service_nh3qpeo',
-        'template_cl95ncj',
-        templateParams, {
-          publicKey: 'rKj7eMi6MOmYV3Te9',
-        },
-      )
-        .then(() => {
-          toast.success(text.successMessage);
-          resetForm();
-        }, (error) => {
-          toast.error(error);
+      // Add a new document in collection "contacts"
+      try {
+        await addDoc(collection(db, "contacts"), {
+          name,
+          email,
+          phone,
+          company,
+          projectIdea,
+          createdAt: serverTimestamp(), // Optional: store the submit timestamp
         });
+        emailjs.send(
+          'service_nh3qpeo',
+          'template_cl95ncj',
+          templateParams, {
+            publicKey: 'rKj7eMi6MOmYV3Te9',
+          },
+        )
+          .then(() => {
+            toast.success(text.successMessage);
+            resetForm();
+          }, (error) => {
+            toast.error(error);
+          });
+      } catch (error) {
+        toast.error(error);
+      }
     } else {
       toast.error(text.errorMessage);
     }
