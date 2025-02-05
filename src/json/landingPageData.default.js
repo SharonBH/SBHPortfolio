@@ -18,8 +18,8 @@ import Management from "../assets/images/Advantages/Management.png";
 import Favorite from "../assets/images/Advantages/Favorite.png";
 
 // Testimonials
-import Sasha from "../assets/images/Testimonials/Sasha.jpg";
-import Reiner from "../assets/images/Testimonials/Reiner.jpg";
+import Pulse from "../assets/images/Testimonials/pulse.png";
+import Elram from "../assets/images/Testimonials/elram.jpeg";
 import Kruger from "../assets/images/Testimonials/Kruger.jpg";
 
 // TeamMembers
@@ -59,7 +59,9 @@ export const About = {
     "Expert in cloud computing, software development, and data management.",
     "Leads outstanding development teams and designs robust system architectures.",
     "Develops significant projects that meet client expectations.",
-    "Passionate about technology and always eager to learn and grow.",
+    "Able to work in a fast-paced environment and deliver results on time.",
+    "Excellent communication skills and ability to work with cross-functional teams.",
+    "Strong problem-solving skills and ability to think strategically.",
   ],
 };
 
@@ -168,7 +170,7 @@ export const Footer = {
   addressHeader: "Office",
   socialHeader: "Social Media",
   company: "SBH...",
-  address: "1234 Street Name, City, Country",
+  address: "Yuvalim campus, Nes Ziona, Israel",
   phone: "+972 (0)542557990",
   email: "info@sbh.com",
   socialMedia: {
@@ -245,26 +247,26 @@ export const Testimonials = {
   reviews: [
     {
       id: 1,
-      name: "Sasha Rose",
-      company: "Owner, Surveyor Corps",
+      name: "Yaron Harel",
+      company: "Owner, Pulse Studio",
       testimoni:
-      "Thanks for SBHstudio, you guys are the best! Keep up the great work!",
-      imageUrl: Sasha,
+      "We highly recommend SBH#DEV the new management system built for our gym is saving us both time and money. The professional support and responsiveness throughout the process made the entire experience exceptional.",
+      imageUrl: Pulse,
     },
     {
       id: 2,
-      name: "Kruger Khan",
-      company: "Director, Shultan Oil",
+      name: "Kruger Adam",
+      company: "Director, 121-Affiliates",
       testimoni:
-      "I just wanted to let you know that it’s been great working with SBHstudio.",
+      "With the help of SBH#DEV Managing our agents is now clearer and more efficient, and the support we received throughout was outstanding.",
       imageUrl: Kruger,
     },
     {
       id: 3,
-      name: "Reiner John",
-      company: "CEO, Marley CO",
-      testimoni: "SBHstudio is so great. Thank you so much for a job well done.",
-      imageUrl: Reiner,
+      name: "Elram Zelenik",
+      company: "Law Firm, Owner",
+      testimoni: "From the start, we knew we were in great hands! The website created for our law firm is professional and easy to navigate, showcasing our services clearly and impressively.",
+      imageUrl: Elram,
     },
   ],
 };

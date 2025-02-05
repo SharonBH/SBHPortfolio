@@ -23,8 +23,10 @@ export default function Footer({ data }) {
             <h1 className="text-lg text-theme-blue pt-4 pb-2">
               {data.addressHeader}
             </h1>
-            <p className="text-lg text-gray-400 font-light">
-              {data.email}
+            <p>
+              <a href="mailto:sharon.benhaim@gmail.com" className="text-lg text-gray-400 font-light hover:underline">
+                {data.email}
+              </a>
             </p>
             <p className="text-lg text-gray-400 font-light">
 {data.address}            </p>

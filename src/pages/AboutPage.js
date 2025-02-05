@@ -10,7 +10,6 @@ import { useLanguage } from 'json/LanguageContext';
 
 function AboutPage() {
   const { data } = useLanguage();
-
   return (
     <>
       <Header data={data.Header} />

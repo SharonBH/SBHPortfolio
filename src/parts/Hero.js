@@ -6,7 +6,7 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 import Button from "../elements/Button";
-import BuildWebsite from "../assets/images/hero/home.png";
+import BuildWebsiteVideo from "../assets/home.mp4";
 
 export default function Hero({ data }) {
   return (
@@ -62,7 +62,8 @@ export default function Hero({ data }) {
       </div>
       <div className="flex pt-5 md:w-fit w-full justify-center items-center order-first md:order-first lg:order-last lg:w-1/2">
         <Fade direction="up" triggerOnce>
-          <img className="" src={BuildWebsite} alt="Build Website" />
+          {/* <img className="" src={BuildWebsite} alt="Build Website" /> */}
+          <video src={BuildWebsiteVideo} autoPlay loop muted />
         </Fade>
       </div>
     </section>

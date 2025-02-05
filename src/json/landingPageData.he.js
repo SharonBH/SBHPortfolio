@@ -18,8 +18,8 @@ import Management from "../assets/images/Advantages/Management.png";
 import Favorite from "../assets/images/Advantages/Favorite.png";
 
 // Testimonials
-import Sasha from "../assets/images/Testimonials/Sasha.jpg";
-import Reiner from "../assets/images/Testimonials/Reiner.jpg";
+import Pulse from "../assets/images/Testimonials/pulse.png";
+import Elram from "../assets/images/Testimonials/elram.jpeg";
 import Kruger from "../assets/images/Testimonials/Kruger.jpg";
 
 // TeamMembers
@@ -46,13 +46,6 @@ export const Hero = {
   teamSubtitle: "הצוות שלנו מלא באנשים נלהבים ומוכן להפוך את החלומות שלך למציאות.",
   aboutHeader: "קצת עלי",
   aboutSubtitle: "אני מתמחה בפיתוח תוכנה ומערכות מידע ומציע שירותי ייעוץ ופיתוח בתחום הטכנולוגיה והמידע.",
-  aboutPoints: [
-    "מנהל טכנולוגיה מנוסה עם למעלה מ-20 שנות ניסיון.",
-    "מומחה במחשוב ענן, פיתוח תוכנה וניהול נתונים.",
-    "מנהל צוותי פיתוח מצטיינים ומתכנן ארכיטקטורות מערכות עמידות.",
-    "מפתח פרויקטים משמעותיים העומדים בציפיות הלקוח.",
-    "אוהב מטכנולוגיה ושואף תמיד ללמוד ולצמוח.",
-  ],
 };
 
 export const About = {
@@ -65,7 +58,9 @@ export const About = {
     "מומחה במחשוב ענן, פיתוח תוכנה וניהול נתונים.",
     "מנהל צוותי פיתוח מצטיינים ומתכנן ארכיטקטורות מערכות עמידות.",
     "מפתח פרויקטים משמעותיים העומדים בציפיות הלקוח.",
-    "אוהב מטכנולוגיה ושואף תמיד ללמוד ולצמוח.",
+    "מחשבה יצירתית ויכולת פתרון בעיות מורכבות.",
+    "תודעת שירות גבוהה ויכולת עבודה בזמנים קצרים.",
+    "אוהב טכנולוגיה ושואף תמיד ללמוד ולצמוח.",
   ],
 };
 
@@ -172,7 +167,7 @@ export const Footer = {
   addressHeader: "משרד",
   socialHeader: "מדיה חברתית",
   company: "SBH...",
-  address: "רחוב שם, עיר, מדינה",
+  address: "קמפוס לעסקים יובלים, נס ציונה",
   phone: "+972 (0)542557990",
   email: "info@sbh.com",
   socialMedia: {
@@ -249,23 +244,23 @@ export const Testimonials = {
       name: "ירון הראל",
       company: "בעלים, Pulse Studio",
       testimoni:
-      "תודה ל-SBHstudio, אתם הכי טובים! תמשיכו בעבודה הנהדרת!",
-      imageUrl: Sasha,
+      "אנחנו ממליצים בחום! מערכת ניהול המנויים, השיעורים והתשלומים הפכו להרבה יותר יעילים ומסודרים, וחוסך לנו זמן וכסף. גם הליווי המקצועי והזמינות לכל שאלה הפכו את החוויה כולה למצוינת.",
+      imageUrl: Pulse,
     },
     {
       id: 2,
-      name: "קרוגר חאן",
-      company: "מנהל, Shultan Oil",
+      name: "אדם קרוגר",
+      company: "מנהל, 121-Affiliates",
       testimoni:
-      "רק רציתי להודיע לכם שהיה נהדר לעבוד עם SBHstudio.",
+      "המערכת שנבנתה עבורנו פשוטה, ידידותית וחוסכת לנו המון זמן ואנרגיה. הניהול של הסוכנים הפך להרבה יותר ברור ויעיל, והשירות והתמיכה לאורך כל הדרך היו יוצאים מן הכלל.",
       imageUrl: Kruger,
     },
     {
       id: 3,
-      name: "ריינר ג'ון",
-      company: "מנכ\"ל, Marley CO",
-      testimoni: "SBHstudio כל כך נהדרים. תודה רבה על עבודה מצוינת.",
-      imageUrl: Reiner,
+      name: "אלרם זלזניק",
+      company: "אלרם משרד עורכי דין",
+      testimoni: "מהרגע הראשון ידענו שאנחנו בידיים טובות! האתר התדמיתי שבנו עבורנו מקצועי ונוח, ומציג את פעילות המשרד באופן ברור ומרשים. שמחנו על הליווי הצמוד והזמינות המיידית לכל שאלה לאורך כל הדרך.",
+      imageUrl: Elram,
     },
   ],
 };
