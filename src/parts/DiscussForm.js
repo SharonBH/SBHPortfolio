@@ -39,10 +39,13 @@ export const DiscussForm = (actions) => {
       // && company !== ''
       && email !== ''
       && phone !== ''
-      && projectIdea !== ''
+      // && projectIdea !== ''
     ) {
       // Add a new document in collection "contacts"
       try {
+        if (projectIdea === '') {
+          templateParams.message = 'No message entered';
+        }
         await addDoc(collection(db, "contacts"), {
           name,
           email,
