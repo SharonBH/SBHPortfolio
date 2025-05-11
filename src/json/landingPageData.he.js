@@ -39,7 +39,7 @@ import UIUX2 from "../assets/images/TeamMembers/UIUX2.jpg";
 export const Hero = {
   title: "ההצלחה שלך היא העסק שלי!",
   subtitle: "עם שנים של ניסיון בתעשיית ההייטק, אני מסייע לעסקים קטנים ובינוניים לממש את הפוטנציאל הטכנולוגי והחדשנות כדי להשיג את מטרותיהם. בין אם אתם זקוקים להנחיה בנושא טרנספורמציה דיגיטלית או לייעוץ ממוקד, אני כאן כדי לתמוך בצמיחה שלכם.",
-  action: "עוד עלינו",
+  action: "עוד עלי",
   protfolioHeader: "הפרויקטים שלי",
   portfolioSubtitle: "",
   teamHeader: "הצוות שלנו",
@@ -72,6 +72,8 @@ export const Services = {
     subtitle: "מאתרים קטנים ליישומי רשת גדולים ומערכות נתונים, אני כאן כדי לספק לכם פתרונות מותאמים אישית.",
     points: [
       "פיתוח אתרים ומערכות WEB מתקדמות לפי צרכי הלקוח.",
+      "הטמעת AI ואוטומציה במערכות קיימות.",
+      "דיגיטליזציה של תהליכים עסקיים.",
       "פיתוח אפליקציות ניידות ומובייל עם מערכות ניהול מתקדמות.",
       "פיתוח מערכות מידע וניהול מידע מתקדמות.",
       "ייעוץ טכנולוגי וניהול מוצר לסטארטאפים וחברות.",
@@ -93,18 +95,18 @@ export const Services = {
       services: ["אפליקציות ניידות", "אפליקציות חיצוניות", "אפליקציות פנימיות"],
     },
     {
-      title: "פיתוח מערכות מידע",
-      description: "אני מתמחה בפיתוח מערכות מידע וניהול מידע.",
+      title: "פיתוח מערכות מידע ו AI",
+      description: "אני מתמחה בפיתוח מערכות מידע וניהול מידע, כולל הטמעת AI ואטומציות לתהליכים עיסקיים.",
       imageUrl: Data,
       animation: "ימין",
-      services: ["מערכות מתואמות אישית", "מערכות CMS", "מערכות BI", "מערכות ניהול"],
+      services: ["מערכות מתואמות אישית", "מערכות CMS", "מערכות BI", "מערכות ניהול", "אוטומציות", "AI", "אינטגרציות"],
     },
     {
       title: "יעוץ והקמה",
       description: "אני מתמחה בייעוץ טכנולוגי והקמה וניהול צוותי פיתוח.",
       imageUrl: Consult,
       animation: "ימין",
-      services: ["יעוץ לסארטאפים וחברות", "ייעוץ בנושא טכנולוגיה", "ייעוץ בנושא טרנספורמציה דיגיטלית", "ייעוץ בנושא ניהול מוצר"],
+      services: ["יעוץ לסארטאפים וחברות", "ייעוץ בנושא טכנולוגיה", "טרנספורמציה דיגיטלית", "ייעוץ בנושא ניהול מוצר", "פתרונות AI"],
     },
   ],
 };
@@ -143,7 +145,7 @@ export const Portfolios = {
 
 export const Discuss = {
   title: "בואו נדבר",
-  subtitle: "לפגישת יעוץ חינם עם צוות המומחים שלנו.",
+  subtitle: "לפגישת יעוץ חינם עם צוות המומחים שלי.",
   action: "לחץ כאן להתחיל",
   description:
     "אנא מלא את הטופס למטה כדי לדבר על הפרויקט שלך ונחזור אליך בהקדם.",
@@ -163,17 +165,15 @@ const currentYear = new Date().getFullYear();
 
 export const Footer = {
   year: currentYear,
-  tagLine: "מעצימים עסקים קטנים ובינוניים לשגשג בעולם ההייטק.",
+  tagLine: "מעצימים חברות ועסקים לשגשג בעולם ההייטק.",
   addressHeader: "משרד",
   socialHeader: "מדיה חברתית",
-  company: "SBH...",
+  company: "SBH#DEV",
   address: "קמפוס לעסקים יובלים, נס ציונה",
   phone: "+972 (0)542557990",
-  email: "info@sbh.com",
+  email: "sharon.benhaim@gmail.com",
   socialMedia: {
-    facebook: "https://facebook.com/yourcompany",
-    twitter: "https://twitter.com/yourcompany",
-    linkedin: "https://linkedin.com/company/yourcompany",
+    linkedin: "https://www.linkedin.com/in/sharon-ben-haim/",
   },
 };
 
@@ -204,8 +204,8 @@ export const Header = {
 };
 
 export const Advantages = {
-  title: "למה לבחור בנו",
-  description: "למה כדאי לבחור בנו לבנות את הפרויקט שלך.",
+  title: "למה לבחור בי",
+  description: "למה כדאי לבחור בי לבנות את הפרויקט שלך.",
   items: [
     [
       {
