@@ -8,6 +8,10 @@ import React, { useLayoutEffect } from 'react';
 import LandingPage from "pages/LandingPage";
 import ProjectPage from "pages/ProjectPage";
 import NotFoundPage from "pages/NotFoundPage";
+import WebDevTelAviv from "pages/WebDevTelAvivPage";
+import AIToolsSmallBiz from "pages/AIToolsSmallBizPage";
+import ChooseWebDeveloper from "pages/ChooseWebDeveloperPage";
+import CustomSoftwareIsrael from "pages/CustomSoftwareIsraelPage";
 import ProjectDetailPage from "pages/ProjectDetailPage";
 import { DiscussProjectPage } from "pages/DiscussProjectPage";
 
@@ -29,6 +33,10 @@ function App() {
         <Route exact path="/services" element={<ServicesPage />} />
         <Route exact path="/about" element={<AboutPage />} />
         <Route exact path="/discuss-project" element={<DiscussProjectPage />} />
+        <Route path="/WebdevTelAviv" element={<WebDevTelAviv />} />
+        <Route path="/AIToolsSmallBiz" element={<AIToolsSmallBiz />} />
+        <Route path="/ChooseWebDeveloper" element={<ChooseWebDeveloper />} />
+        <Route path="/CustomSoftwareIsrael" element={<CustomSoftwareIsrael />} />
         <Route path="*/*" element={<NotFoundPage />} />
       </Routes>
     </>
