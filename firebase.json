@@ -1,13 +1,47 @@
 {
-  "database": { "rules": "database.rules.json" },
+  "database": {
+    "rules": "database.rules.json"
+  },
   "hosting": {
     "public": "out",
     "cleanUrls": true,
     "trailingSlash": false,
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "redirects": [
-      { "source": "/project", "destination": "/", "type": 301 },
-      { "source": "/project/**", "destination": "/", "type": 301 }
+      {
+        "source": "/project",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/project/**",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/aitoolssmallbiz",
+        "destination": "/AIToolsSmallBiz",
+        "type": 301
+      },
+      {
+        "source": "/choosewebdeveloper",
+        "destination": "/ChooseWebDeveloper",
+        "type": 301
+      },
+      {
+        "source": "/customsoftwareisrael",
+        "destination": "/CustomSoftwareIsrael",
+        "type": 301
+      },
+      {
+        "source": "/webdevtelaviv",
+        "destination": "/WebdevTelAviv",
+        "type": 301
+      }
     ]
   }
 }
