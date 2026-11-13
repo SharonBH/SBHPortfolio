@@ -1,20 +1,32 @@
-### About
+# sbh.co.il — v2
 
-A software house profile website built with ReactJS and TailwindCSS :computer:
+Personal site of Sharon Ben Haim (SBH#DEV). AI-first CTO positioning, bilingual (Hebrew RTL at `/`, English at `/en`), light/dark themes.
 
-### Tech Stack
+**Stack:** Next.js 15 (App Router, static export) · Tailwind CSS v4 · TypeScript · Firebase Hosting + Firestore · EmailJS
 
-- [**ReactJS**](https://github.com/facebook/create-react-app)
-- [**PostCSS**](https://postcss.org/)
-- [**TailwindCSS**](https://tailwindcss.com/)
-- [**Vercel**](https://vercel.com/)
+## Run
+```bash
+npm install
+npm run dev       # http://localhost:3000
+npm run build     # static site in ./out
+npm run deploy    # build + firebase deploy --only hosting
+```
 
-### Library
+## Where to edit content
+| What | File |
+|---|---|
+| All page copy (EN / HE) | `src/content/en.ts`, `src/content/he.ts` |
+| Posts / articles | `src/content/articles.ts` |
+| Highlighted GitHub repos | `src/content/repos.ts` (`featured: true` → home page) |
+| Tech stack + AI toolbox | `src/content/stack.ts` |
+| Theme colors | `src/app/globals.css` (`:root` / `[data-theme="dark"]`) |
 
-- [**emailJS**](https://www.emailjs.com/) : Send email from javascript
-- [**headlessUI**](https://github.com/tailwindlabs/headlessui) : Transition Style
-- [**React Splide**](https://splidejs.com/integration-react-splide/) : Carousel / Slider
-- [**React Reveal**](https://www.react-reveal.com/) : Animation
-- [**React Tabs**](https://www.npmjs.com/package/react-tabs) : Tab component
-- [**React Toastify**](https://www.npmjs.com/package/react-toastify) : Toast notification
-- [**ESLint**](https://eslint.org/) : Linting and formatting
+## Routes
+`/` `/services` `/ai` `/code` `/writing` `/about` `/discuss-project` + the same under `/en`.
+Legacy Hebrew SEO URLs are preserved: `/AIToolsSmallBiz`, `/ChooseWebDeveloper`, `/CustomSoftwareIsrael`, `/WebdevTelAviv`.
+New posts: `/writing/<slug>` (HE) and `/en/writing/<slug>` (EN).
+
+## Notes
+- Contact form writes to the same Firestore `contacts` collection and EmailJS template as v1.
+- `firebase.json` now serves `out/` with `cleanUrls`.
+- Theme is stored in `localStorage` and falls back to the OS preference; no flash on load.

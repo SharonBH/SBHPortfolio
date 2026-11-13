@@ -1,19 +1,13 @@
 {
-  "database": {
-    "rules": "database.rules.json"
-  },
+  "database": { "rules": "database.rules.json" },
   "hosting": {
-    "public": "build",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
+    "public": "out",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      { "source": "/project", "destination": "/", "type": 301 },
+      { "source": "/project/**", "destination": "/", "type": 301 }
     ]
   }
 }
