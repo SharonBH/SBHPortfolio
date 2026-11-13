@@ -26,7 +26,7 @@ export function siteGraph(lang: Lang) {
         description:
           "Four-time CTO with 20+ years of experience building and shipping production software. Fractional CTO and hands-on AI engineer helping startups and businesses ship LLM apps, AI agents and AI-native engineering teams.",
         url: abs(href(lang, "/about")),
-        // TODO: add `image` once a headshot is in /public; the logo is not a photo of the person.
+        image: { "@type": "ImageObject", url: `${SITE.url}/img/sharon-ben-haim.jpg`, width: 800, height: 800, caption: "Sharon Ben Haim" },
         email: `mailto:${SITE.email}`,
         sameAs: [SITE.linkedin, SITE.github],
         worksFor: { "@type": "Organization", name: "Ottri", description: "Embedded-finance platform" },
