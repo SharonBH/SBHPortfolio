@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Article, Block } from "@/content/articles";
 import { getDict, href, type Lang } from "@/lib/i18n";
 import { Btn, Eyebrow } from "@/components/ui";
+import Icon from "@/components/Icon";
 
 function B({ b }: { b: Block }) {
   switch (b.t) {
@@ -20,6 +21,7 @@ function B({ b }: { b: Block }) {
 export default function ArticleView({ a, lang }: { a: Article; lang: Lang }) {
   const d = getDict(lang);
   const body = (lang === "en" ? a.en : a.he)!;
+  const guide = a.kind === "guide";
   const date = new Date(a.date).toLocaleDateString(lang === "he" ? "he-IL" : "en-GB", { day: "numeric", month: "long", year: "numeric" });
   const jsonLd = { "@context": "https://schema.org", "@type": "BlogPosting", headline: body.title, description: body.excerpt, datePublished: a.date, inLanguage: lang, author: { "@type": "Person", name: "Sharon Ben Haim", url: "https://sbh.co.il/about" } };
   return (
@@ -27,8 +29,13 @@ export default function ArticleView({ a, lang }: { a: Article; lang: Lang }) {
       <div className="bg-grid absolute inset-x-0 top-0 -z-10 h-96" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="mx-auto max-w-3xl px-5">
-        <Link href={href(lang, "/writing")} className="font-mono text-xs text-muted hover:text-accent"><span className="inline-block rtl:-scale-x-100">←</span> {d.writing.back}</Link>
-        <div className="mt-8"><Eyebrow>{`// ${a.tag.toLowerCase()} · ${a.minutes} ${d.writing.min}`}</Eyebrow></div>
+        <Link href={href(lang, guide ? "/writing#guides" : "/writing#articles")} className="font-mono text-xs text-muted hover:text-accent"><span className="inline-block rtl:-scale-x-100">←</span> {guide ? d.writing.backGuides : d.writing.back}</Link>
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-[11px] font-semibold ${guide ? "bg-surface-2 text-fg" : "bg-accent-fill text-on-accent"}`}>
+            {guide && <Icon name="guide" className="size-3.5 text-accent" />}{guide ? d.writing.kindGuide : d.writing.kindArticle}
+          </span>
+          <Eyebrow>{`// ${a.tag.toLowerCase()} · ${a.minutes} ${d.writing.min}`}</Eyebrow>
+        </div>
         <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{body.title}</h1>
         <p className="mt-5 text-lg text-muted">{body.excerpt}</p>
         <div className="mt-6 flex items-center gap-3 border-b border-line pb-8 text-sm text-muted">

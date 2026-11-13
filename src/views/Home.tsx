@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getDict, href, type Lang } from "@/lib/i18n";
+import { getDict, href, SITE, type Lang } from "@/lib/i18n";
 import AgentTrace from "@/components/AgentTrace";
 import StackGrid from "@/components/StackGrid";
 import Icon from "@/components/Icon";
@@ -11,8 +11,8 @@ import { stack } from "@/content/stack";
 
 export default function Home({ lang }: { lang: Lang }) {
   const d = getDict(lang);
-  const posts = articlesFor(lang).slice(0, 3);
-  const enPosts = lang === "en" ? [...posts, ...articlesFor("he").filter((a) => !a.en)].slice(0, 3) : posts;
+  // Home teaser shows articles only; guides live in their own section on /writing.
+  const enPosts = articlesFor(lang).filter((a) => a.kind === "article").slice(0, 3);
 
   return (
     <>
@@ -69,6 +69,28 @@ export default function Home({ lang }: { lang: Lang }) {
           ))}
         </div>
       </div>
+
+      {/* ───── Why experience ───── */}
+      <section className="mx-auto max-w-6xl px-5 pt-28">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
+          <div>
+            <SectionHead eyebrow={d.experience.eyebrow} title={d.experience.title} sub={d.experience.sub} />
+            <Link href={lang === "en" ? href("en", "/writing/experience-agentic-era") : "/writing/experience-agentic-era"}
+              className="reveal -mt-6 inline-flex items-center gap-2 font-mono text-sm text-accent hover:underline">
+              {d.experience.link}<Icon name="arrow" className="size-4 rtl:-scale-x-100" />
+            </Link>
+          </div>
+          <ol className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
+            {d.experience.items.map((x, i) => (
+              <li key={x.k} style={{ "--d": `${i * 80}ms` } as React.CSSProperties} className="reveal bg-surface p-6">
+                <span className="font-mono text-xs text-accent">{x.k}</span>
+                <h3 className="mt-3 text-lg font-semibold">{x.t}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-muted">{x.d}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
 
       {/* ───── Pillars ───── */}
       <section className="mx-auto max-w-6xl px-5 py-28">
@@ -130,7 +152,7 @@ export default function Home({ lang }: { lang: Lang }) {
       <section className="border-y border-line bg-bg-2 py-28">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[1fr_1.6fr]">
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <SectionHead eyebrow={d.work.eyebrow} title={d.work.title} />
+            <SectionHead eyebrow={d.work.eyebrow} title={d.work.title} sub={d.work.sub} />
           </div>
           <ol className="relative border-s border-line">
             {d.work.items.map((w, i) => (
@@ -150,6 +172,17 @@ export default function Home({ lang }: { lang: Lang }) {
       {/* ───── Testimonials ───── */}
       <section className="mx-auto max-w-6xl px-5 py-28">
         <SectionHead eyebrow={d.testimonials.eyebrow} title={d.testimonials.title} />
+        <figure dir="ltr" className="reveal spot hairline mb-5 rounded-2xl p-7 sm:p-9">
+          <span className="font-mono text-4xl leading-none text-accent">“</span>
+          <blockquote className="mt-2 text-lg leading-relaxed text-fg-2 sm:text-xl">{d.testimonials.featured.q}</blockquote>
+          <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-5">
+            <span className="grid size-10 place-items-center rounded-full bg-accent-fill font-mono text-xs font-bold text-on-accent">AD</span>
+            <div dir={lang === "he" ? "rtl" : undefined}>
+              <div className="text-sm font-semibold">{d.testimonials.featured.name}</div>
+              <a href={SITE.linkedin} target="_blank" rel="noreferrer" className="text-xs text-muted hover:text-accent">{d.testimonials.featured.role}</a>
+            </div>
+          </figcaption>
+        </figure>
         <div className="grid gap-5 md:grid-cols-3">
           {d.testimonials.items.map((t, i) => (
             <figure key={t.name} className="reveal spot hairline flex flex-col rounded-2xl p-6" style={{ "--d": `${i * 80}ms` } as React.CSSProperties}>

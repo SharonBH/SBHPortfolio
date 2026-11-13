@@ -21,4 +21,10 @@ export const SITE = {
   email: "sharon.benhaim@gmail.com",
   linkedin: "https://www.linkedin.com/in/sharon-ben-haim/",
   github: "https://github.com/SharonBH",
+  whatsapp: "972542557990", // international format, digits only
+  phone: "054-2557990",
 };
+
+/** wa.me deep link with a prefilled, localized opening message. */
+export const waLink = (lang: Lang) =>
+  `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(lang === "he" ? "היי שרון, הגעתי מהאתר ורציתי לדבר על פרויקט" : "Hi Sharon, I found you through your website and wanted to talk about a project")}`;

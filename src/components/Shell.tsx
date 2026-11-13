@@ -1,5 +1,6 @@
 import "../app/globals.css";
-import type { Lang } from "@/lib/i18n";
+import { getDict, waLink, type Lang } from "@/lib/i18n";
+import Icon from "./Icon";
 import Header from "./Header";
 import Footer from "./Footer";
 import Effects from "./Effects";
@@ -29,6 +30,10 @@ export default function Shell({ lang, children }: { lang: Lang; children: React.
         <Header lang={lang} />
         <main id="main">{children}</main>
         <Footer lang={lang} />
+        <a href={waLink(lang)} target="_blank" rel="noreferrer" aria-label={getDict(lang).contact.whatsappCta}
+          className="fixed bottom-5 right-5 z-50 grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/30 transition hover:scale-105">
+          <Icon name="whatsapp" className="size-7" />
+        </a>
         <Effects />
       </body>
     </html>

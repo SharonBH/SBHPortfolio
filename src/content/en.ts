@@ -6,7 +6,7 @@ const en = {
   meta: {
     title: "Sharon Ben Haim — CTO & AI Engineering | SBH#DEV",
     description:
-      "CTO with 20+ years building software. I help startups and businesses ship AI products that work in production: LLM apps, AI agents, data platforms, and AI-native engineering teams.",
+      "CTO with 20+ years of experience building software. I help startups and businesses ship AI products that work in production: LLM apps, AI agents, data platforms, and AI-native engineering teams.",
   },
   nav: {
     home: "Home",
@@ -25,16 +25,28 @@ const en = {
     titleA: "From AI hype",
     titleB: "to AI in production.",
     sub:
-      "I'm Sharon Ben Haim, a CTO with 20+ years of shipping software. I help founders and teams turn LLMs, agents and data into products that are reliable, secure and worth paying for.",
+      "I'm Sharon Ben Haim, a CTO with 20+ years of experience building and shipping production software. AI agents write code fast. Knowing what to build, what to reject and how it will behave with real customers is still experience. I help founders and teams turn LLMs, agents and data into products that are reliable, secure and worth paying for.",
     primary: "Book a free intro call",
     secondary: "See how I work with AI",
   },
   stats: [
-    { v: "20+", l: "years building software" },
-    { v: "3×", l: "CTO roles" },
+    { v: "20+", l: "years of experience" },
+    { v: "4×", l: "CTO roles" },
     { v: "15y", l: "on Azure, plus AWS" },
-    { v: "1", l: "exit (Beehive B.I., 2018)" },
+    { v: "2", l: "exits (Beehive B.I. → Playtech 2018, Spacebar Media)" },
   ],
+  experience: {
+    eyebrow: "// why experience, and why now",
+    title: "AI writes the code. Experience decides what ships.",
+    sub: "In the agentic era anyone can ship a demo over a weekend. What's become rare is the judgment to build a system that survives real customers, regulators and 3 AM incidents. That's what 20+ years of experience buys you.",
+    items: [
+      { k: "01", t: "Judgment", d: "An agent will offer ten solutions. Experience knows which nine to reject, and why. You can't download that from a prompt." },
+      { k: "02", t: "Production scars", d: "Security, permissions, cloud costs and failures I've already met in fintech, energy and SaaS. I know where it breaks before it breaks." },
+      { k: "03", t: "Architecture that lasts", d: "Code written fast needs a structure that holds for years. The right calls in week one save a rewrite in year two." },
+      { k: "04", t: "Speed without debt", d: "A senior engineer working with agents delivers a team's output with a CTO's review bar. You get the pace without paying for it later." },
+    ],
+    link: "Why experience matters more in the agentic era",
+  },
   pillars: {
     eyebrow: "// what I build",
     title: "AI engineering, end to end",
@@ -87,17 +99,19 @@ const en = {
   work: {
     eyebrow: "// track record",
     title: "Built, scaled, shipped",
+    sub: "From leading a single team to running a multi-squad R&D department: I've hired, built and managed development teams at every stage, from first engineer to several teams shipping in parallel.",
     items: [
-      { when: "Now", role: "CTO", org: "Ottri", d: "Leading engineering, architecture and technical strategy for an embedded-finance platform connecting consumers, merchants and lending partners in home improvement and elective medical." },
+      { when: "2025 → now", role: "CTO", org: "Ottri", d: "Leading engineering, architecture and technical strategy for an embedded-finance platform connecting consumers, merchants and lending partners in home improvement and elective medical." },
       { when: "Ongoing", role: "Founder", org: "SBH#DEV", d: "Fractional CTO and AI engineering for startups and SMBs: management systems, web platforms, automations and AI integrations." },
-      { when: "Before", role: "CTO & Group Manager", org: "Expertpower", d: "Cloud energy-management platform: led product engineering, data and infrastructure teams." },
-      { when: "→ 2018", role: "Co-founder & CTO", org: "Beehive B.I.", d: "Marketing-analytics SaaS. Built the product and the team through to acquisition in 2018." },
-      { when: "Earlier", role: "Engineer → Lead", org: "London", d: "A decade building web applications in the UK, where I learned to ship at scale." },
+      { when: "2020 → 2025", role: "CTO", org: "Expertpower", d: "Cloud energy-management SaaS for utilities on Azure: meter data management, sub-metering, billing and demand response. Led a multi-squad R&D department across product engineering, data and infrastructure." },
+      { when: "2013 → 2020", role: "Co-founder & CTO", org: "Beehive B.I.", d: "Data-driven marketing-analytics SaaS (React, .NET). Built the product and the team from scratch; acquired by Playtech in 2018, then two more years integrating our platform into Playtech's internal systems." },
+      { when: "2003 → 2013", role: "Senior Developer → Head of IT", org: "Spacebar Media, London", d: "Ten years in London, growing from senior developer to Head of IT. Lead developer and team lead on the largest online bingo network through its sale to another operator: my first exit, and where I learned to ship at scale." },
     ],
   },
   testimonials: {
     eyebrow: "// signal, not noise",
-    title: "What clients say",
+    title: "What people say",
+    featured: { name: "Adi Dagan", role: "Recommendation on LinkedIn", q: "Sharon embodies a rare blend of technical leadership and unwavering dedication. As our CTO, he consistently stepped beyond traditional boundaries, making substantial contributions to ensure our business succeeded. His role extended far beyond his job title, demonstrating business acumen, team collaboration, and a unique willingness to explore uncharted territories. His integrity and professionalism became a benchmark, fostering a culture of trust within our team. On a personal note, Sharon's positive attitude and warm demeanor make him not just a respected colleague, but a valued friend. I am looking forward to working with him again. best wingman ever" },
     items: [
       { name: "Yaron Harel", role: "Owner, Pulse Studio", img: "/img/pulse.png", q: "The new management system built for our studio saves us both time and money. The professional support and responsiveness throughout made the whole experience exceptional." },
       { name: "Adam Kruger", role: "Director, 121-Affiliates", img: "/img/Kruger.jpg", q: "Managing our agents is now clearer and more efficient. The system is simple and friendly, and the support we got all the way through was outstanding." },
@@ -117,8 +131,8 @@ const en = {
   },
   writingTeaser: {
     eyebrow: "// notes",
-    title: "Latest writing",
-    all: "All posts",
+    title: "Latest articles",
+    all: "All articles & guides",
     heOnly: "Hebrew",
   },
   cta: {
@@ -202,7 +216,8 @@ const en = {
     eyebrow: "// about",
     title: "Engineer at heart. CTO by trade.",
     p: [
-      "I've spent more than twenty years building software, from a decade of web applications in London to co-founding Beehive B.I., a marketing-analytics SaaS we sold in 2018, to leading engineering as CTO at Expertpower and today at Ottri, an embedded-finance platform.",
+      "I have 20+ years of experience building software, from a decade of web applications in London, including leading development of the largest online bingo network at Spacebar Media through its sale, to co-founding Beehive B.I., a marketing-analytics SaaS acquired by Playtech in 2018, to leading engineering as CTO at Expertpower and today at Ottri, an embedded-finance platform.",
+      "Along the way I've built and managed development teams at every size: hiring the first engineers at a startup, leading cross-functional product teams, and running a multi-squad R&D department with several teams working in parallel. I know how to set up the structure, rituals and code-review culture that let a team ship fast without breaking things.",
       "Over the last few years my work has moved decisively toward AI: putting LLMs into real products, building agents that touch real systems, and changing how engineering teams work now that coding agents are part of the team.",
       "Through SBH#DEV I work with a small number of startups and businesses as a fractional CTO and hands-on AI engineer. I care about the boring parts that make AI trustworthy: data, evals, security and cost.",
     ],
@@ -213,6 +228,8 @@ const en = {
       ["Native in", "C#, TypeScript"],
       ["Clouds", "Azure (15y), AWS"],
       ["Domains", "Fintech, lending, energy, analytics, SaaS"],
+      ["Leadership", "Built & led dev teams, up to multi-squad R&D"],
+      ["Studied", "Economics, Hebrew University of Jerusalem"],
     ],
     valuesTitle: "What you can expect",
     values: [
@@ -223,11 +240,20 @@ const en = {
     ],
   },
   writing: {
-    eyebrow: "// writing",
+    eyebrow: "// articles & guides",
     title: "Notes on AI, software and building",
-    sub: "Practical guides for founders and business owners. Most posts are in Hebrew.",
+    sub: "Articles from a CTO's point of view, and hands-on guides for business owners.",
+    articlesEyebrow: "// articles",
+    articlesTitle: "Articles",
+    articlesSub: "Opinions and lessons from the field: AI in production, leading teams, architecture. For founders, CTOs and engineers.",
+    guidesEyebrow: "// guides",
+    guidesTitle: "Guides",
+    guidesSub: "Step by step and jargon-free: how to choose, price and adopt technology in your business. Mostly in Hebrew.",
+    kindArticle: "Article",
+    kindGuide: "Guide",
     read: "Read",
-    back: "All posts",
+    back: "All articles",
+    backGuides: "All guides",
     min: "min read",
   },
   contact: {
@@ -244,7 +270,10 @@ const en = {
     ok: "Thanks, got it. I'll get back to you shortly.",
     err: "Please fill in name, email and phone.",
     fail: "Something went wrong. Please try again or email me directly.",
-    direct: "Prefer email?",
+    direct: "Prefer to talk directly?",
+    whatsapp: "WhatsApp",
+    whatsappCta: "Message me on WhatsApp",
+    whatsappNote: "The fastest way to reach me. I usually reply within a few hours.",
   },
   footer: {
     tag: "AI engineering and technical leadership for teams that ship.",

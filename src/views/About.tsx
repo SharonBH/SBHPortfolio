@@ -45,7 +45,7 @@ export default function About({ lang }: { lang: Lang }) {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 pb-28">
-        <SectionHead eyebrow={d.work.eyebrow} title={d.work.title} />
+        <SectionHead eyebrow={d.work.eyebrow} title={d.work.title} sub={d.work.sub} />
         <div className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line">
           {d.work.items.map((w) => (
             <div key={w.org} className="reveal grid gap-2 bg-surface p-6 sm:grid-cols-[120px_220px_1fr] sm:gap-6">

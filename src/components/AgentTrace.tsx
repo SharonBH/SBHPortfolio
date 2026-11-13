@@ -6,28 +6,40 @@ type Run = { cmd: string; lines: Line[]; footer: string };
 
 const RUNS: Run[] = [
   {
-    cmd: "sbh run agent:loan-intake --env=prod",
+    cmd: 'sbh run agent:ship --idea="dark mode"',
     lines: [
-      { k: "plan", text: "classify → enrich → route → draft", tone: "dim" },
-      { k: "tool", text: 'crm.lookup(id: "A-1042")', meta: "182ms" },
-      { k: "tool", text: 'docs.search("partner criteria") → 3 chunks', meta: "240ms" },
-      { k: "guard", text: "pii_redaction · schema_check", meta: "pass" },
-      { k: "eval", text: "faithfulness 0.97 · relevance 0.95", meta: "pass" },
-      { k: "human", text: "approval requested → ops", meta: "queued", tone: "warn" },
+      { k: "plan", text: "spec → build → test → ship", tone: "dim" },
+      { k: "tool", text: "repo.read(src/) → 42 files", meta: "120ms" },
+      { k: "tool", text: "code.write(theme, toggle, tokens)", meta: "38s" },
+      { k: "test", text: "312 passed · 0 failed", meta: "pass" },
+      { k: "guard", text: "a11y_contrast · security_scan", meta: "pass" },
+      { k: "human", text: "preview ready → your review", meta: "you", tone: "warn" },
     ],
-    footer: "done  1.8s · $0.004 · 2,341 tok",
+    footer: "done  52s · ready to ship",
   },
   {
-    cmd: "sbh run agent:pr-review --repo=platform",
+    cmd: "sbh run agent:inbox-zero --since=monday",
     lines: [
-      { k: "plan", text: "read diff → run checks → review", tone: "dim" },
-      { k: "tool", text: "git.diff(base: main) → 14 files", meta: "90ms" },
-      { k: "tool", text: "ci.run(tests, semgrep)", meta: "41s" },
-      { k: "guard", text: "secrets_scan · license_check", meta: "pass" },
-      { k: "review", text: "2 suggestions · 0 blockers", meta: "ok" },
-      { k: "human", text: "ready for merge approval", meta: "you", tone: "warn" },
+      { k: "plan", text: "triage → summarize → draft", tone: "dim" },
+      { k: "tool", text: "mail.fetch() → 142 threads", meta: "310ms" },
+      { k: "sort", text: "2 urgent · 9 need reply · 131 fyi", meta: "ok" },
+      { k: "draft", text: "9 replies in your tone", meta: "ok" },
+      { k: "guard", text: "never_send_without_approval", meta: "pass" },
+      { k: "human", text: "9 drafts waiting for you", meta: "you", tone: "warn" },
     ],
-    footer: "done  46s · $0.11 · 18,920 tok",
+    footer: "done  14s · inbox: 0 (almost)",
+  },
+  {
+    cmd: "sbh run agent:coffee --size=large",
+    lines: [
+      { k: "plan", text: "beans → grind → brew → pour", tone: "dim" },
+      { k: "tool", text: "kitchen.find(beans) → 2 bags", meta: "ok" },
+      { k: "tool", text: "grinder.run(fine)", meta: "18s" },
+      { k: "guard", text: "decaf_check · mug_is_clean", meta: "pass" },
+      { k: "eval", text: "aroma 0.98 · temp 68°C", meta: "pass" },
+      { k: "human", text: "extra shot? approval needed", meta: "you", tone: "warn" },
+    ],
+    footer: "done  2m 41s · ☕ ready",
   },
 ];
 

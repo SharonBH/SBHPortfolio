@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Repo } from "@/content/repos";
 import type { Article } from "@/content/articles";
-import { href, type Dict, type Lang } from "@/lib/i18n";
+import { href, SITE, waLink, type Dict, type Lang } from "@/lib/i18n";
 import Icon from "./Icon";
 import { Chip, Btn } from "./ui";
 
@@ -72,10 +72,38 @@ export function CtaBlock({ lang, d }: { lang: Lang; d: Dict }) {
           <p className="mx-auto mt-5 max-w-xl text-lg text-muted">{d.cta.sub}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Btn href={href(lang, "/discuss-project")}>{d.cta.button}</Btn>
-            <a href="mailto:sharon.benhaim@gmail.com" className="px-4 py-3 text-sm text-muted underline-offset-4 hover:text-fg hover:underline">{d.cta.alt}</a>
+            <a href={waLink(lang)} target="_blank" rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-[#25D366]/50 px-5 py-3 text-sm font-semibold transition hover:bg-[#25D366]/10 hover:text-[#25D366]">
+              <Icon name="whatsapp" className="size-4" />{d.contact.whatsapp}
+            </a>
+            <a href={`mailto:${SITE.email}`} className="px-4 py-3 text-sm text-muted underline-offset-4 hover:text-fg hover:underline">{d.cta.alt}</a>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+export function GuideCard({ a, lang, d, i = 0 }: { a: Article; lang: Lang; d: Dict; i?: number }) {
+  const body = (lang === "en" ? a.en : a.he) ?? a.he!;
+  const heOnly = lang === "en" && !a.en;
+  return (
+    <Link href={articleHref(a, lang)} style={{ "--d": `${i * 60}ms` } as React.CSSProperties}
+      className="reveal spot hairline group flex flex-col rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1">
+      <div className="flex items-center justify-between gap-3">
+        <span className="inline-flex items-center gap-2 rounded-full bg-surface-2 px-3 py-1 font-mono text-[11px] text-fg-2">
+          <Icon name="guide" className="size-3.5 text-accent" />{d.writing.kindGuide}
+        </span>
+        <span className="font-mono text-[11px] text-muted">{a.minutes} {d.writing.min}</span>
+      </div>
+      <div dir={heOnly ? "rtl" : undefined} className="mt-5 flex-1">
+        <h3 className="text-lg font-semibold leading-snug transition group-hover:text-accent">{body.title}</h3>
+        <p className="mt-2 line-clamp-3 text-[15px] text-muted">{body.excerpt}</p>
+      </div>
+      <div className="mt-5 flex items-center justify-between border-t border-line pt-4 font-mono text-xs text-muted">
+        <span className="flex items-center gap-2">{a.tag}{heOnly && <Chip>{d.writingTeaser.heOnly}</Chip>}</span>
+        <Icon name="arrow" className="size-4 transition group-hover:translate-x-1 group-hover:text-accent rtl:-scale-x-100 rtl:group-hover:-translate-x-1" />
+      </div>
+    </Link>
   );
 }
