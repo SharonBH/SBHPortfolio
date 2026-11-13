@@ -12,7 +12,13 @@ export type Block =
   | { t: "ol"; v: string[] }
   | { t: "table"; head: string[]; rows: string[][] };
 
-export type ArticleBody = { title: string; excerpt: string; blocks: Block[] };
+export type ArticleBody = {
+  title: string;
+  excerpt: string;
+  /** 2–3 sentence answer-first summary shown at the top and used by search/AI engines. */
+  tldr?: string;
+  blocks: Block[];
+};
 
 export type Article = {
   slug: string;
@@ -20,6 +26,8 @@ export type Article = {
   kind: "article" | "guide";
   hePath: string; // Hebrew URL (root)
   date: string; // ISO
+  /** ISO date of the last meaningful edit, if any. */
+  updated?: string;
   tag: "AI" | "Engineering" | "Business";
   minutes: number;
   he?: ArticleBody;
@@ -37,6 +45,7 @@ export const articles: Article[] = [
     en: {
       title: "From demo to production: a CTO's checklist for shipping LLM features",
       excerpt: "A working demo takes a weekend. A feature customers trust takes discipline. Here's the checklist I run before anything AI goes live.",
+      tldr: "Shipping an LLM feature to production takes five things a demo skips: a golden set of 30–100 real examples that defines 'good', clean context instead of a bigger model, guardrails where money, health or legal risk sits, cost measured per successful outcome, and observability that alerts on quality drift.",
       blocks: [
         { t: "p", v: "Every team I talk to has an impressive AI demo. Very few have an AI feature in production that they'd bet the business on. The gap isn't the model. It's the engineering around it." },
         { t: "h2", v: "1. Define 'good' before you write a prompt" },
@@ -55,6 +64,7 @@ export const articles: Article[] = [
     he: {
       title: "מדמו לפרודקשן: צ'קליסט של CTO לשחרור פיצ'רים מבוססי LLM",
       excerpt: "דמו עובד לוקח סוף שבוע. פיצ'ר שלקוחות סומכים עליו דורש משמעת. זה הצ'קליסט שאני עובר לפני שמשהו מבוסס AI עולה לאוויר.",
+      tldr: "כדי להעלות פיצ'ר LLM לפרודקשן צריך חמישה דברים שדמו מדלג עליהם: golden set של 30–100 דוגמאות אמיתיות שמגדיר מה זה 'טוב', הקשר נקי במקום מודל גדול יותר, guardrails איפה שיש כסף, בריאות או משפט, מדידת עלות לכל תוצאה מוצלחת, ו-observability שמתריע על ירידה באיכות.",
       blocks: [
         { t: "p", v: "לכל צוות שאני פוגש יש דמו AI מרשים. למעט מאוד צוותים יש פיצ'ר AI בפרודקשן שהם מוכנים להמר עליו. הפער הוא לא במודל, הוא בהנדסה שמסביבו." },
         { t: "h2", v: "1. מגדירים מה זה 'טוב' לפני שכותבים פרומפט" },
@@ -81,6 +91,7 @@ export const articles: Article[] = [
     en: {
       title: "Running an AI-native engineering team",
       excerpt: "Coding agents don't replace engineers. They change what engineers spend their day on. Here's the operating model that's worked for me.",
+      tldr: "In an AI-native engineering team, coding agents make writing code cheap, so the bottleneck moves to intent and review. What works: short written specs with acceptance criteria, agent context kept in the repo (AGENTS.md, skills, architecture notes), agents in parallel worktrees, and strict gates of tests, static analysis and human review before merge.",
       blocks: [
         { t: "p", v: "Once coding agents became genuinely useful, the bottleneck in my teams moved. Writing code got cheap; deciding what to build, reviewing it and keeping the system coherent did not." },
         { t: "h2", v: "Specs are back" },
@@ -97,6 +108,7 @@ export const articles: Article[] = [
     he: {
       title: "איך מנהלים צוות פיתוח AI-native",
       excerpt: "סוכני קוד לא מחליפים מפתחים. הם משנים על מה מפתחים מבלים את היום. זה מודל העבודה שעובד אצלי.",
+      tldr: "בצוות פיתוח AI-native, סוכני קוד הופכים כתיבת קוד לזולה, וצוואר הבקבוק עובר לכוונה ולסקירה. מה שעובד: אפיונים קצרים עם קריטריוני קבלה, הקשר לסוכן שיושב בריפו (AGENTS.md, skills, הערות ארכיטקטורה), סוכנים ב-worktrees מקבילים, ושערים קשוחים של טסטים, ניתוח סטטי וסקירה אנושית לפני מיזוג.",
       blocks: [
         { t: "p", v: "ברגע שסוכני הקוד נהיו שימושיים באמת, צוואר הבקבוק בצוותים שלי זז. כתיבת קוד נהייתה זולה. להחליט מה לבנות, לסקור את זה ולשמור על מערכת קוהרנטית, לא." },
         { t: "h2", v: "האפיון חזר" },
@@ -121,6 +133,7 @@ export const articles: Article[] = [
     he: {
       title: "5 כלי בינה מלאכותית שכל עסק קטן בישראל חייב להכיר",
       excerpt: "AI כבר לא שייך רק לחברות ענק. גם עסקים קטנים יכולים לחסוך זמן, לייעל תהליכים ולשפר שירות בעזרת כלים פשוטים וזמינים.",
+      tldr: "חמישה כלי AI זמינים שעסק קטן בישראל יכול להתחיל איתם כבר היום: Claude או ChatGPT לשירות ותוכן, Notion AI לארגון ידע, Pictory לסרטונים, Tidio לצ'אטבוט באתר, ו-Make לאוטומציה בין מערכות.",
       blocks: [
         { t: "p", v: "AI כבר לא שייך רק לחברות ענק. גם עסקים קטנים בישראל יכולים לחסוך זמן, לייעל תהליכים ולשפר שירות, בעזרת כלים פשוטים, זמינים וחכמים. הנה 5 כלים שאני ממליץ לבדוק." },
         { t: "h3", v: "1. Claude / ChatGPT: שירות לקוחות, תוכן והכוונה" },
@@ -148,6 +161,7 @@ export const articles: Article[] = [
     he: {
       title: "איך לבחור את מפתח האתרים המתאים לעסק שלך בישראל?",
       excerpt: "פרילנסר, סטודיו או חברה? מדריך קצר לבחירה נכונה ולהימנעות מטעויות נפוצות.",
+      tldr: "פרילנסר זול יותר ונותן קשר ישיר, חברה נותנת צוות וזמינות במחיר גבוה יותר. בכל מקרה, שאלו על טכנולוגיות, ניסיון בפרויקטים דומים, תמיכה לאורך זמן ומה כלול במחיר, ובדקו אם המפתח שואל שאלות עסקיות.",
       blocks: [
         { t: "p", v: "בין אם אתם מקימים אתר חדש לעסק קטן או בונים פלטפורמה מורכבת, בחירת מפתח אתרים היא החלטה קריטית. במדריך הזה נבין איך לבחור נכון, בין פרילנסר, סטודיו או חברה, ואיך להימנע מטעויות נפוצות." },
         { t: "h2", v: "פרילנסר או חברה? יתרונות וחסרונות" },
@@ -171,6 +185,7 @@ export const articles: Article[] = [
     he: {
       title: "פיתוח תוכנה בהתאמה אישית בישראל: פתרונות מדויקים לעסקים",
       excerpt: "מתי מוצר מדף לא מספיק, ואיך נראה תהליך פיתוח של מערכת שמותאמת בדיוק לעסק שלכם.",
+      tldr: "תוכנה בהתאמה אישית משתלמת כשיש לכם תהליך ייחודי, הרבה עבודה ידנית, תלות במנויים או צורך לחבר כמה מערכות. התהליך: הבנת העסק, אפיון, עיצוב UX/UI, פיתוח, ובדיקות ושיפור מתמשך.",
       blocks: [
         { t: "p", v: "לא כל עסק דומה לשני, ולכן לפעמים הפתרון הנכון הוא לא מוצר מוכן אלא תוכנה מותאמת אישית: מערכות וכלים דיגיטליים שמדויקים לתהליכים, לעובדים ולצרכים של העסק." },
         { t: "h2", v: "מתי כדאי לפתח תוכנה מותאמת אישית?" },
@@ -194,6 +209,7 @@ export const articles: Article[] = [
     he: {
       title: "פיתוח אתרים בתל אביב: אתרים ואפליקציות שמניעים תוצאות",
       excerpt: "אתרים ואפליקציות בהתאמה אישית לעסקים מקומיים, עם דגש על תוצאה עסקית, עיצוב מודרני וקוד איכותי.",
+      tldr: "אתר טוב לעסק בתל אביב מתחיל מתוצאה עסקית ולא מעיצוב: שיחת אפיון, הצעה מותאמת, עיצוב מודרני, פיתוח מותאם למובייל ול-SEO, וליווי בהטמעה. בפרויקט לדוגמה זה הביא פי 2 פניות ו-60% יותר תנועה אורגנית.",
       blocks: [
         { t: "p", v: "מחפשים מי שיפתח לכם אתר בתל אביב, יבין את הצרכים שלכם, יחשוב עסקית ויפתח פתרון מדויק? אני בונה אתרים ואפליקציות בהתאמה אישית לעסקים מקומיים, עם דגש על תוצאה עסקית, עיצוב מודרני וקוד איכותי." },
         { t: "h2", v: "למה לבחור בי?" },
@@ -217,6 +233,7 @@ export const articles: Article[] = [
     en: {
       title: "Why experience matters more, not less, in the agentic era",
       excerpt: "AI agents made writing code almost free. That didn't make senior engineers less valuable. It made judgment the scarcest thing on the team.",
+      tldr: "Experience matters more in the agentic era, not less. AI agents made writing code nearly free, but shipping the wrong code costs as much as ever, and agents multiply the judgment of whoever drives them. Senior engineers bring what agents can't: knowing what not to build, security and cost instincts, and the systems discipline AI products need.",
       blocks: [
         { t: "p", v: "There's a popular idea that coding agents level the playing field: a junior with the right tools can now do what a senior used to. After 20+ years of experience building and shipping software, and a year of running teams where agents write a large share of the code, I've seen the opposite." },
         { t: "h2", v: "Code got cheap. Mistakes didn't." },
@@ -237,6 +254,7 @@ export const articles: Article[] = [
     he: {
       title: "למה ניסיון חשוב יותר, לא פחות, בעידן הסוכנים",
       excerpt: "סוכני AI הפכו כתיבת קוד לכמעט חינמית. זה לא הוריד מהערך של מפתחים בכירים. זה הפך שיקול דעת למשאב הכי נדיר בצוות.",
+      tldr: "ניסיון חשוב יותר בעידן הסוכנים, לא פחות. סוכני AI הפכו כתיבת קוד לכמעט חינמית, אבל לשחרר את הקוד הלא נכון עולה כמו תמיד, וסוכנים מכפילים את שיקול הדעת של מי שמפעיל אותם. מפתחים בכירים מביאים את מה שסוכן לא יכול: לדעת מה לא לבנות, אינסטינקטים של אבטחה ועלויות, ומשמעת הנדסית שמוצרי AI צריכים.",
       blocks: [
         { t: "p", v: "יש רעיון פופולרי שסוכני קוד משווים את המגרש: מפתח ג'וניור עם הכלים הנכונים יכול היום לעשות מה שפעם עשה בכיר. אחרי 20+ שנות ניסיון בבנייה ושחרור תוכנה, ושנה של ניהול צוותים שבהם סוכנים כותבים חלק גדול מהקוד, ראיתי את ההפך." },
         { t: "h2", v: "קוד נהיה זול. טעויות לא." },
@@ -265,6 +283,7 @@ export const articles: Article[] = [
     en: {
       title: "RAG is not a product: what actually breaks when you connect AI to your data",
       excerpt: "Retrieval-augmented generation looks easy in a notebook. In production, the hard parts are permissions, freshness and knowing when the answer is wrong.",
+      tldr: "RAG fails in production on data, not on the model. Make it work by cleaning and deduplicating sources, filtering by user permissions at retrieval time, indexing incrementally so answers stay fresh, letting the assistant say 'I don't know' below a relevance threshold, and measuring retrieval separately from generation.",
       blocks: [
         { t: "p", v: "Almost every company I advise has the same first AI project: let people ask questions about our documents. It's a good first project. It's also where most teams learn that the model is the easy part." },
         { t: "h2", v: "1. Your data is messier than your demo" },
@@ -284,6 +303,7 @@ export const articles: Article[] = [
     he: {
       title: "RAG הוא לא מוצר: מה באמת נשבר כשמחברים AI לדאטה של החברה",
       excerpt: "RAG נראה פשוט במחברת. בפרודקשן, החלקים הקשים הם הרשאות, עדכניות, והיכולת לדעת מתי התשובה שגויה.",
+      tldr: "RAG נכשל בפרודקשן בגלל הדאטה, לא בגלל המודל. כדי שיעבוד: מנקים ומורידים כפילויות במקורות, מסננים לפי הרשאות המשתמש בשלב האחזור, מאנדקסים באופן מצטבר כדי שהתשובות יהיו עדכניות, נותנים לעוזר להגיד 'אני לא יודע' מתחת לסף רלוונטיות, ומודדים אחזור בנפרד מיצירה.",
       blocks: [
         { t: "p", v: "כמעט כל חברה שאני מייעץ לה מתחילה מאותו פרויקט AI: לאפשר לשאול שאלות על המסמכים שלנו. זה פרויקט ראשון טוב. זה גם המקום שבו רוב הצוותים מגלים שהמודל הוא החלק הקל." },
         { t: "h2", v: "1. הדאטה שלכם מבולגן יותר מהדמו" },
@@ -311,6 +331,7 @@ export const articles: Article[] = [
     en: {
       title: "Build vs. buy when code is cheap: a CTO's decision framework",
       excerpt: "Coding agents made building faster, not free. Here's how I decide what to build, what to buy and what to glue together.",
+      tldr: "Cheap code lowered the cost of writing software, not of owning it. Build what makes you different (core domain logic, your own workflows, AI on your own data), buy solved problems like auth, payments, CRM and accounting, and glue the rest with thin, well-tested integrations.",
       blocks: [
         { t: "p", v: "A founder recently told me: 'With AI we can just build our own CRM.' They could. They'd also own it forever. Cheap code changed the cost of writing software, not the cost of running it." },
         { t: "h2", v: "The three questions" },
@@ -329,6 +350,7 @@ export const articles: Article[] = [
     he: {
       title: "לבנות או לקנות כשקוד נהיה זול: מסגרת החלטה של CTO",
       excerpt: "סוכני קוד הפכו את הפיתוח למהיר יותר, לא לחינמי. ככה אני מחליט מה לבנות, מה לקנות ומה לחבר.",
+      tldr: "קוד זול הוריד את העלות של לכתוב תוכנה, לא של להחזיק אותה. בונים את מה שעושה אתכם שונים (לוגיקת ליבה, תהליכים ייחודיים, AI על הדאטה שלכם), קונים בעיות פתורות כמו הזדהות, סליקה, CRM והנהלת חשבונות, ומחברים את השאר באינטגרציות דקות ובדוקות.",
       blocks: [
         { t: "p", v: "מייסד אמר לי לאחרונה: 'עם AI אנחנו יכולים פשוט לבנות CRM משלנו.' הם יכולים. הם גם יחזיקו אותו לנצח. קוד זול שינה את העלות של לכתוב תוכנה, לא את העלות של להריץ אותה." },
         { t: "h2", v: "שלוש השאלות" },
@@ -355,6 +377,7 @@ export const articles: Article[] = [
     en: {
       title: "The boring stack wins: why I still pick proven tech for new products",
       excerpt: "New frameworks are fun. Shipping is more fun. Here's the stack I default to for startups in 2026, and why novelty has to earn its place.",
+      tldr: "For new products, pick proven technology and spend your innovation budget on the product. My 2026 default: Postgres, TypeScript or .NET, Next.js, managed AWS or Azure services, and one AI provider behind a thin interface. It's easier to hire for, AI agents write it well, and its failure modes are documented.",
       blocks: [
         { t: "p", v: "Every new project starts with the same temptation: this time, let's try the new thing. After 20+ years of experience, my default is the opposite. Spend your innovation budget on the product, not the plumbing." },
         { t: "h2", v: "My default stack" },
@@ -369,6 +392,7 @@ export const articles: Article[] = [
     he: {
       title: "הסטאק המשעמם מנצח: למה אני עדיין בוחר טכנולוגיה מוכחת למוצרים חדשים",
       excerpt: "פריימוורקים חדשים זה כיף. לשחרר מוצר זה יותר כיף. זה הסטאק שאני ממליץ עליו לסטארטאפים ב-2026, ולמה חידוש צריך להצדיק את עצמו.",
+      tldr: "למוצרים חדשים בוחרים טכנולוגיה מוכחת ומשקיעים את תקציב החדשנות במוצר. ברירת המחדל שלי ב-2026: Postgres, TypeScript או .NET, Next.js, שירותים מנוהלים ב-AWS או Azure, וספק AI אחד מאחורי ממשק דק. קל לגייס אליה, סוכני AI כותבים אותה טוב, ודרכי הכישלון שלה מתועדות.",
       blocks: [
         { t: "p", v: "כל פרויקט חדש מתחיל באותו פיתוי: הפעם בואו ננסה את הדבר החדש. אחרי 20+ שנות ניסיון, ברירת המחדל שלי הפוכה. משקיעים את תקציב החדשנות במוצר, לא בצנרת." },
         { t: "h2", v: "הסטאק שלי כברירת מחדל" },
@@ -392,6 +416,7 @@ export const articles: Article[] = [
     en: {
       title: "How to add an AI assistant to your business website or WhatsApp, step by step",
       excerpt: "A practical guide for business owners: what an AI assistant can answer, what it shouldn't, and how to launch one without embarrassing your brand.",
+      tldr: "To add an AI assistant to your business website or WhatsApp: list the top 20 customer questions and their answers, define what it must never do (prices, refunds, advice), write one clear knowledge document per topic, choose the channel, always offer a human handover, and launch small with weekly reviews.",
       blocks: [
         { t: "p", v: "An AI assistant can answer the same 20 questions your team answers every day, at 11 PM, in Hebrew and English. Done badly, it invents prices and promises refunds. Here's how to do it well." },
         { t: "h2", v: "Step 1: List the questions it should handle" },
@@ -412,6 +437,7 @@ export const articles: Article[] = [
     he: {
       title: "איך מוסיפים עוזר AI לאתר או לוואטסאפ של העסק, צעד אחר צעד",
       excerpt: "מדריך מעשי לבעלי עסקים: על מה עוזר AI יכול לענות, על מה אסור לו, ואיך משיקים אותו בלי להביך את המותג.",
+      tldr: "כדי להוסיף עוזר AI לאתר או לוואטסאפ של העסק: רושמים את 20 השאלות הנפוצות והתשובות להן, מגדירים מה אסור לו (מחירים, החזרים, ייעוץ), כותבים מסמך ידע ברור לכל נושא, בוחרים ערוץ, תמיד מאפשרים מעבר לנציג אנושי, ומשיקים בקטן עם סקירה שבועית.",
       blocks: [
         { t: "p", v: "עוזר AI יכול לענות על אותן 20 שאלות שהצוות שלכם עונה עליהן כל יום, גם ב-11 בלילה, בעברית ובאנגלית. כשעושים את זה לא נכון, הוא ממציא מחירים ומבטיח החזרים. ככה עושים את זה נכון." },
         { t: "h2", v: "שלב 1: רושמים את השאלות שהוא צריך לענות עליהן" },
@@ -440,6 +466,7 @@ export const articles: Article[] = [
     en: {
       title: "7 processes every small business should automate first",
       excerpt: "Not sure where automation and AI will actually save you time? Start with these seven, ordered by effort and payoff.",
+      tldr: "The seven processes a small business should automate first are lead capture into a CRM, an instant first reply, appointment reminders, quotes and invoices, payment follow-ups, review requests, and a weekly numbers summary. Start with the one that annoys you most and measure the hours saved.",
       blocks: [
         { t: "p", v: "Automation isn't about replacing people. It's about getting hours back from copy-paste work so your team can do the part customers pay for. These are the processes I see pay off fastest in Israeli small businesses." },
         { t: "h2", v: "1. Lead capture to CRM" },
@@ -463,6 +490,7 @@ export const articles: Article[] = [
     he: {
       title: "7 תהליכים שכל עסק קטן צריך לעשות להם אוטומציה קודם",
       excerpt: "לא בטוחים איפה אוטומציה ו-AI באמת יחסכו לכם זמן? מתחילים מהשבעה האלה, מסודרים לפי מאמץ ותועלת.",
+      tldr: "שבעת התהליכים שעסק קטן צריך לעשות להם אוטומציה קודם: לידים ישר ל-CRM, מענה ראשון מיידי, תזכורות לפגישות, הצעות מחיר וחשבוניות, מעקב תשלומים, בקשת ביקורות, וסיכום מספרים שבועי. מתחילים מהתהליך שהכי מעצבן אתכם ומודדים כמה שעות נחסכו.",
       blocks: [
         { t: "p", v: "אוטומציה היא לא החלפת אנשים. היא החזרת שעות מעבודת העתק-הדבק, כדי שהצוות יעשה את מה שהלקוחות משלמים עליו. אלה התהליכים שאני רואה שמחזירים את ההשקעה הכי מהר בעסקים קטנים בישראל." },
         { t: "h2", v: "1. לידים ישר ל-CRM" },
@@ -494,6 +522,7 @@ export const articles: Article[] = [
     en: {
       title: "Website security for small businesses: a 10-point checklist",
       excerpt: "You don't need a security team to avoid the most common disasters. Go through these ten points with whoever manages your site.",
+      tldr: "Most small-business website hacks come from shared passwords, old plugins or an expired domain. The 10-point fix: personal logins with two-factor authentication, the domain and hosting owned by the business, monthly updates, off-server backups you've tested, HTTPS, spam-protected forms, and a written incident plan.",
       blocks: [
         { t: "p", v: "Most small-business hacks aren't sophisticated. They're an old plugin, a shared password or a domain that expired. This checklist covers the basics that prevent most of them." },
         { t: "h2", v: "Access" },
@@ -511,6 +540,7 @@ export const articles: Article[] = [
     he: {
       title: "אבטחת אתרים לעסקים קטנים: צ'קליסט של 10 נקודות",
       excerpt: "לא צריך צוות סייבר כדי להימנע מהאסונות הנפוצים. עברו על עשר הנקודות האלה עם מי שמנהל לכם את האתר.",
+      tldr: "רוב הפריצות לאתרים של עסקים קטנים מגיעות מסיסמאות משותפות, תוספים ישנים או דומיין שפג תוקפו. הצ'קליסט בעשר נקודות: משתמש אישי עם אימות דו-שלבי, דומיין ואחסון על שם העסק, עדכונים חודשיים, גיבויים מחוץ לשרת שנבדקו, HTTPS, טפסים עם הגנה מספאם, ותוכנית כתובה למקרה של תקלה.",
       blocks: [
         { t: "p", v: "רוב הפריצות לאתרים של עסקים קטנים הן לא מתוחכמות. מדובר בתוסף ישן, סיסמה משותפת או דומיין שפג תוקפו. הצ'קליסט הזה מכסה את הבסיס שמונע את רובן." },
         { t: "h2", v: "גישה" },
@@ -536,6 +566,7 @@ export const articles: Article[] = [
     en: {
       title: "Before you call a developer: how to write a one-page project brief",
       excerpt: "A clear brief gets you better quotes, faster timelines and fewer surprises. Here's the template I ask every client to fill in.",
+      tldr: "A one-page project brief gets better quotes and fewer surprises. Cover the problem in one paragraph, who uses the system, must-haves versus nice-to-haves, what already exists, constraints such as budget range and deadline, and the number that should change three months after launch.",
       blocks: [
         { t: "p", v: "The biggest predictor of a smooth software project isn't the budget or the tech. It's whether the client can explain, on one page, what success looks like. Here's how to write that page." },
         { t: "h2", v: "1. The problem, in one paragraph" },
@@ -556,6 +587,7 @@ export const articles: Article[] = [
     he: {
       title: "לפני שמתקשרים למפתח: איך כותבים בריף פרויקט בעמוד אחד",
       excerpt: "בריף ברור מביא הצעות מחיר טובות יותר, לוחות זמנים קצרים יותר ופחות הפתעות. זו התבנית שאני מבקש מכל לקוח למלא.",
+      tldr: "בריף פרויקט בעמוד אחד מביא הצעות מחיר טובות יותר ופחות הפתעות. כוללים את הבעיה בפסקה אחת, מי משתמש במערכת, חובה מול נחמד שיהיה, מה כבר קיים, אילוצים כמו טווח תקציב ודדליין, ואיזה מספר צריך להשתנות שלושה חודשים אחרי ההשקה.",
       blocks: [
         { t: "p", v: "המנבא הכי טוב לפרויקט תוכנה שעובר חלק הוא לא התקציב ולא הטכנולוגיה. זה האם הלקוח יודע להסביר, בעמוד אחד, איך נראית הצלחה. ככה כותבים את העמוד הזה." },
         { t: "h2", v: "1. הבעיה, בפסקה אחת" },

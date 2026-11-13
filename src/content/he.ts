@@ -255,6 +255,7 @@ const he: Dict = {
     back: "לכל המאמרים",
     backGuides: "לכל המדריכים",
     min: "דק׳ קריאה",
+    tldr: "בקצרה",
   },
   contact: {
     eyebrow: "// צור קשר",

@@ -255,6 +255,7 @@ const en = {
     back: "All articles",
     backGuides: "All guides",
     min: "min read",
+    tldr: "In short",
   },
   contact: {
     eyebrow: "// contact",

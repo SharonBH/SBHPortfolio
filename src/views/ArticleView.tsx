@@ -3,6 +3,7 @@ import type { Article, Block } from "@/content/articles";
 import { getDict, href, type Lang } from "@/lib/i18n";
 import { Btn, Eyebrow } from "@/components/ui";
 import Icon from "@/components/Icon";
+import { articleLd, ldScript } from "@/lib/schema";
 
 function B({ b }: { b: Block }) {
   switch (b.t) {
@@ -23,11 +24,11 @@ export default function ArticleView({ a, lang }: { a: Article; lang: Lang }) {
   const body = (lang === "en" ? a.en : a.he)!;
   const guide = a.kind === "guide";
   const date = new Date(a.date).toLocaleDateString(lang === "he" ? "he-IL" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
-  const jsonLd = { "@context": "https://schema.org", "@type": "BlogPosting", headline: body.title, description: body.excerpt, datePublished: a.date, inLanguage: lang, author: { "@type": "Person", name: "Sharon Ben Haim", url: "https://sbh.co.il/about" } };
+  const path = lang === "en" ? `/en/writing/${a.slug}` : a.hePath;
   return (
     <article className="relative pt-32">
       <div className="bg-grid absolute inset-x-0 top-0 -z-10 h-96" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={ldScript(articleLd(a, lang, path))} />
       <div className="mx-auto max-w-3xl px-5">
         <Link href={href(lang, guide ? "/writing#guides" : "/writing#articles")} className="font-mono text-xs text-muted hover:text-accent"><span className="inline-block rtl:-scale-x-100">←</span> {guide ? d.writing.backGuides : d.writing.back}</Link>
         <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -42,6 +43,12 @@ export default function ArticleView({ a, lang }: { a: Article; lang: Lang }) {
           <span className="grid size-8 place-items-center rounded-full bg-accent-fill font-mono text-xs font-bold text-on-accent">SB</span>
           <span>Sharon Ben Haim</span><span>·</span><time dateTime={a.date}>{date}</time>
         </div>
+        {body.tldr && (
+          <aside className="mt-10 rounded-2xl border border-accent/40 bg-surface p-6">
+            <p className="font-mono text-xs font-semibold uppercase tracking-wide text-accent">{d.writing.tldr}</p>
+            <p className="mt-2 text-[17px] leading-relaxed text-fg-2">{body.tldr}</p>
+          </aside>
+        )}
         <div className="prose-sbh mt-10 text-[17px]">{body.blocks.map((b, i) => <B key={i} b={b} />)}</div>
         <div className="mt-14 rounded-2xl border border-line bg-surface p-8 text-center">
           <h2 className="text-2xl font-semibold">{d.cta.title}</h2>
