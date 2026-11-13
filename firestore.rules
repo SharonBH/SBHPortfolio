@@ -1,0 +1,32 @@
+rules_version = '2';
+
+// Contact form leads (src/components/ContactForm.tsx).
+// Anyone may create a lead with exactly the form's fields; nobody can read, change or delete leads from the client.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /contacts/{id} {
+      allow create: if validLead(request.resource.data);
+      allow read, update, delete: if false;
+    }
+
+    // Everything else is closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+
+function str(v, min, max) {
+  return v is string && v.size() >= min && v.size() <= max;
+}
+
+function validLead(d) {
+  return d.keys().hasOnly(['name', 'email', 'phone', 'company', 'projectIdea', 'createdAt'])
+    && d.keys().hasAll(['name', 'email', 'phone', 'createdAt'])
+    && str(d.name, 1, 100)
+    && str(d.email, 3, 200)
+    && str(d.phone, 5, 30)
+    && (!('company' in d) || str(d.company, 0, 120))
+    && (!('projectIdea' in d) || str(d.projectIdea, 0, 4000))
+    && d.createdAt == request.time;
+}
