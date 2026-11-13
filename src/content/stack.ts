@@ -24,7 +24,6 @@ export const stack: { name: string; cat: StackCat }[] = [
   { name: "Codex", cat: "devtools" },
   { name: "Cursor", cat: "devtools" },
   { name: "GitHub Copilot", cat: "devtools" },
-  { name: "Semgrep", cat: "devtools" },
   { name: "PostgreSQL", cat: "data" },
   { name: "pgvector", cat: "data" },
   { name: "MongoDB", cat: "data" },
@@ -51,6 +50,6 @@ export const toolbox: { name: string; kind: string; en: string; he: string }[] =
   { name: "GitHub Copilot", kind: "assistant", en: "Inline completion and PR assistance across the team.", he: "השלמות בתוך הקוד ועזרה ב-PRs לכל הצוות." },
   { name: "MCP servers", kind: "integration", en: "Connecting agents to ClickUp, Figma, GitHub, databases and internal tools.", he: "חיבור סוכנים ל-ClickUp, Figma, GitHub, מסדי נתונים וכלים פנימיים." },
   { name: "Claude / Cowork", kind: "assistant", en: "Research, specs, architecture reviews and day-to-day ops automation.", he: "מחקר, אפיונים, סקירות ארכיטקטורה ואוטומציה של עבודה יומיומית." },
-  { name: "Semgrep", kind: "guardrail", en: "Static analysis gate on AI-written code before review.", he: "שער ניתוח סטטי לקוד שנכתב ע״י AI לפני סקירה." },
+  { name: "CI quality gates", kind: "guardrail", en: "Tests, linters and type checks run on every AI-written change before a human reviews it.", he: "טסטים, לינטרים ובדיקות טיפוסים רצים על כל שינוי שנכתב ע״י AI לפני שאדם סוקר אותו." },
   { name: "Git worktrees", kind: "workflow", en: "Agents run in isolated worktrees so tasks run in parallel without collisions.", he: "סוכנים רצים ב-worktrees מבודדים, כך שמשימות רצות במקביל בלי התנגשויות." },
 ];
