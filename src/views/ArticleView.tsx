@@ -22,7 +22,7 @@ export default function ArticleView({ a, lang }: { a: Article; lang: Lang }) {
   const d = getDict(lang);
   const body = (lang === "en" ? a.en : a.he)!;
   const guide = a.kind === "guide";
-  const date = new Date(a.date).toLocaleDateString(lang === "he" ? "he-IL" : "en-GB", { day: "numeric", month: "long", year: "numeric" });
+  const date = new Date(a.date).toLocaleDateString(lang === "he" ? "he-IL" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   const jsonLd = { "@context": "https://schema.org", "@type": "BlogPosting", headline: body.title, description: body.excerpt, datePublished: a.date, inLanguage: lang, author: { "@type": "Person", name: "Sharon Ben Haim", url: "https://sbh.co.il/about" } };
   return (
     <article className="relative pt-32">

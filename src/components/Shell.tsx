@@ -6,6 +6,9 @@ import Footer from "./Footer";
 import Effects from "./Effects";
 import { themeScript } from "./ThemeToggle";
 
+/** Hide .reveal elements only when JS runs. Injected as a <style> React doesn't own, so hydration can't strip it. */
+const revealScript = `(()=>{var s=document.createElement("style");s.textContent="@media (prefers-reduced-motion:no-preference){.reveal:not(.in){opacity:0;transform:translateY(18px)}}";document.head.appendChild(s)})();`;
+
 const personLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -21,6 +24,7 @@ export default function Shell({ lang, children }: { lang: Lang; children: React.
     <html lang={lang} dir={lang === "he" ? "rtl" : "ltr"} data-theme="dark" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: revealScript }} />
         <meta name="theme-color" content="#07080a" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />

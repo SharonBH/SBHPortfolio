@@ -41,7 +41,7 @@ export function articleHref(a: Article, lang: Lang) {
 export function ArticleRow({ a, lang, d, i = 0 }: { a: Article; lang: Lang; d: Dict; i?: number }) {
   const body = (lang === "en" ? a.en : a.he) ?? a.he!;
   const heOnly = lang === "en" && !a.en;
-  const date = new Date(a.date).toLocaleDateString(lang === "he" ? "he-IL" : "en-GB", { month: "short", year: "numeric" });
+  const date = new Date(a.date).toLocaleDateString(lang === "he" ? "he-IL" : "en-GB", { month: "short", year: "numeric", timeZone: "UTC" });
   return (
     <Link href={articleHref(a, lang)} style={{ "--d": `${i * 60}ms` } as React.CSSProperties}
       className="reveal group grid gap-2 border-b border-line py-6 transition sm:grid-cols-[140px_1fr_auto] sm:items-baseline sm:gap-8">
