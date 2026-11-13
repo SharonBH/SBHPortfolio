@@ -2,12 +2,14 @@ import { getDict, href, type Lang } from "@/lib/i18n";
 import { Btn, PageHero, SectionHead } from "@/components/ui";
 import { CtaBlock } from "@/components/cards";
 import Icon from "@/components/Icon";
+import { ldScript, servicesGraph } from "@/lib/schema";
 
 export default function Services({ lang }: { lang: Lang }) {
   const d = getDict(lang);
   const s = d.services;
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={ldScript(servicesGraph(lang))} />
       <PageHero eyebrow={s.eyebrow} title={s.title} sub={s.sub} />
       <section className="mx-auto max-w-6xl px-5">
         <div className="grid gap-5 md:grid-cols-2">
