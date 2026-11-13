@@ -29,7 +29,7 @@ export default function ContactForm({ t }: { t: T }) {
     setData(empty);
     setState("ok");
     import("@emailjs/browser")
-      .then((emailjs) => emailjs.send("service_nh3qpeo", "template_cl95ncj", {
+      .then((emailjs) => emailjs.send("service_7nnlj9d", "template_cl95ncj", {
         from_name: `${sent.name} - ${sent.company} ( ${sent.phone} - ${sent.email} )`,
         to_name: "SBH",
         message: sent.projectIdea || "No message entered",
